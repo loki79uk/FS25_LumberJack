@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="92">
+	<author>loki_79</author>
+    <version>1.0.0.0</version>
+	<title>
+		<en>LumberJack</en>
+		<de>Holzfäller</de>
+	</title>
+
+	<description>
+<en><![CDATA[This mod adds some quality of life improvements to make clearing trees with a chainsaw a little bit easier, but still retains enough realism to deserve the payment for selling the wood.  The chainsaw can now grind stumps, and the 'super strength' mode also grants the ability to completely delete trees.
+
+Hotkeys:
+- Hold down ALT key for temporary strength
+- Double tap ALT key to toggle super strength on/off
+
+Features:
+- Easily destroy small pieces of wood, similar to removing superficial branches
+- Adjustable chainsaw cutting speed and range
+- Adjustable object mass and pick-up range (only when super strength is active)
+- Cut trees anywhere on the map, even on land that cannot be purchased (e.g. the shop)
+- Display mass of viewed objects in F1 menu
+- Chainsaw can remove stumps (grind for 3 seconds)
+
+]]>
+</en>
+<de><![CDATA[Dieser Mod fügt einige Verbesserungen der Lebensqualität hinzu, um das Abholzen von Bäumen mit der Kettensäge etwas einfacher zu machen, behält aber immer noch genug Realismus, um die Bezahlung für den Verkauf des Holzes zu verdienen.  Die Kettensäge kann nun Baumstümpfe schleifen, und der 'Superstärke'-Modus bietet auch die Möglichkeit, Bäume vollständig zu löschen.
+
+Tastenkombinationen:
+- ALT für temporäre Stärke gedrückt halten
+- Tippe ALT doppelt zum Ein-/Ausschalten der Superstärke
+
+Merkmale:
+- Leichte Zerstörung kleiner Holzstücke, ähnlich wie beim Entfernen von superfischen Ästen
+- Einstellbare Geschwindigkeit und Reichweite der Kettensäge
+- Einstellbare Objektmasse und Aufnahmereichweite (nur bei aktiver Superstärke)
+- Bäume überall auf der Karte fällen, auch auf Land, das nicht gekauft werden kann (wie das Geschäft)
+- Masse der angezeigten Objekte im F1-Menü anzeigen
+- Kettensäge kann Stümpfe entfernen (3 Sekunden schleifen)
+
+]]>
+</de>
+	</description>
+
+	<multiplayer supported="true" />
+	<iconFilename>icon_LumberJack.dds</iconFilename>
+	<extraSourceFiles>
+		<sourceFile filename="LumberJack.lua" />
+	</extraSourceFiles>
+	
+	<actions>
+		<action name="LUMBERJACK_STRENGTH" category="ONFOOT" axisType="HALF"/>
+	</actions>
+	<inputBinding>
+		<actionBinding action="LUMBERJACK_STRENGTH" >
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lalt" />
+		</actionBinding>
+	</inputBinding>	
+	<l10n filenamePrefix="language/l10n"/>
+	
+</modDesc>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+	<texts>
+		<text name="menu_LUMBERJACK_TITLE" text="Holzfäller"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Superstärke"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Superstärke"/>
+		<text name="text_MASS" text="Masse"/>
+		<text name="text_TONNE" text="Tonne"/>
+		<text name="text_KG" text="kg"/>
+		<text name="text_METRE" text="m"/>
+		<text name="text_SECOND" text="s"/>
+		<text name="text_INFINITE" text="Unendlich"/>
+		
+		<text name="permission_lumberJack_superSpeed" text="Holzfäller Geschwindigkeit"/>
+		<text name="permission_lumberJack_superStrength" text="Holzfäller Stärke"/>
+		<text name="permission_lumberJack_chainsawSettings" text="Holzfäller Kettensäge"/>
+				
+		<text name="setting_lumberJack_cutAnywhere" text="Überall schneiden"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="Der Spieler kann überall auf der Karte eine Kettensäge benutzen."/>
+		
+		<text name="setting_lumberJack_createWoodchips" text="Hackschnitzel erzeugen"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Hackschnitzel entstehen beim Fällen von Bäumen oder Zerkleinern von Baumstümpfen mit der Kettensäge."/>
+		
+		<text name="setting_lumberJack_maxCutDistance" text="Kettensägenschnitt Abstand"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="Maximale Entfernung, die der Spieler erreichen kann, um mit einer Kettensäge zu schneiden."/>
+		
+		<text name="setting_lumberJack_defaultCutDuration" text="Kettensägenschnitt Dauer"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Anzahl der Sekunden für einen Standardschnitt mit der Kettensäge."/>
+		
+		<text name="setting_lumberJack_superStrengthValue" text="Superstärke Werte"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Maximales Gewicht, das bei aktivierter Superkraft gehoben werden kann."/>
+		
+		<text name="setting_lumberJack_normalStrengthValue" text="Normale Stärke Wert"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximales Gewicht, das der Spieler mit normaler Kraft heben kann."/>
+		
+		<text name="setting_lumberJack_superDistanceValue" text="Superstärke Entfernung"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="Entfernung, die der Spieler erreichen kann, um Objekte zu heben, wenn Superkraft aktiviert ist."/>
+		
+		<text name="setting_lumberJack_normalDistanceValue" text="Normale Stärke Entfernung"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="Entfernung, die der Spieler erreichen kann, um Objekte mit normaler Kraft zu heben."/>
+		
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Gehgeschwindigkeit"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Die normale Gehgeschwindigkeit des Spielers."/>
+		
+		<text name="setting_lumberJack_maxRunningSpeed" text="Laufgeschwindigkeit"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="Die normale Laufgeschwindigkeit des Spielers."/>
+		
+		<text name="setting_lumberJack_reduceSideSpeed" text="Seitliche Geschwindigkeit verringern"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Verringert die Geschwindigkeit des Spielers bei einer Seitwärtsbewegung."/>
+		
+		<text name="setting_lumberJack_destroyFoliageSize" text="Größe der Laubzerstörung"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Die Größe des Bereichs, in dem Laub und Sträucher zerstört werden."/>
+		
+		<text name="setting_lumberJack_showDebug" text="Debug Informationen anzeigen"/>
+		<text name="toolTip_lumberJack_showDebug" text="Schreibt Debug Ausgaben und zeigt ein Overlay für den Erkennungsbereich."/>
+		
+    </texts>
+</l10n>

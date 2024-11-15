@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+	<translationContributors>nagor</translationContributors>
+	<texts>
+		<text name="menu_LUMBERJACK_TITLE" text="Дровосек"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Суперсила"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Суперсила"/>
+		<text name="text_MASS" text="Масса"/>
+		<text name="text_TONNE" text="тонн"/>
+		<text name="text_KG" text="кг"/>
+		<text name="text_METRE" text="м"/>
+		<text name="text_SECOND" text="с"/>
+		<text name="text_INFINITE" text="Беспредельно"/>
+		
+		<text name="permission_lumberJack_superSpeed" text="Дровосек: Скорость"/>
+		<text name="permission_lumberJack_superStrength" text="Дровосек: Сила"/>
+		<text name="permission_lumberJack_chainsawSettings" text="Дровосек: Бензопила"/>
+				
+		<text name="setting_lumberJack_cutAnywhere" text="Пилить везде"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="Игрок может использовать бензопилу в любом месте карты."/>
+		
+		<text name="setting_lumberJack_createWoodchips" text="Создавать щепу"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Щепа образуется при рубке деревьев или измельчении пней бензопилой."/>
+				
+		<text name="setting_lumberJack_maxCutDistance" text="Расстояние пропила бензопилой"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="Максимальное расстояние, на котором игрок может резать бензопилой."/>
+		
+		<text name="setting_lumberJack_defaultCutDuration" text="Продолжительность резки бензопилой"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Количество секунд для стандартного распила бензопилой."/>
+		
+		<text name="setting_lumberJack_superStrengthValue" text="Величина суперсилы"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Максимальный вес, который можно поднять при активной суперсиле."/>
+		
+		<text name="setting_lumberJack_normalStrengthValue" text="Нормальная сила"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Максимальный вес, который может поднять игрок с нормальной силой."/>
+
+		<text name="setting_lumberJack_superDistanceValue" text="Дистанция суперсилы"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="Расстояние, на котором игрок может поднять объекты, когда активна суперсила."/>
+
+		<text name="setting_lumberJack_normalDistanceValue" text="Дистанция нормальной силы"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="Расстояние, на котором игрок может поднять предметы с нормальной силой."/>
+
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Скорость ходьбы"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Нормальная скорость ходьбы игрока."/>
+		
+		<text name="setting_lumberJack_maxRunningSpeed" text="Скорость бега"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="Нормальная скорость бега игрока."/>
+		
+		<text name="setting_lumberJack_reduceSideSpeed" text="Уменьшить боковую скорость"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Уменьшить скорость игрока при шаге в бок."/>
+		
+		<text name="setting_lumberJack_destroyFoliageSize" text="Размер зоны уничтожения"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Размер зоны обнаружения для уничтожения веток и кустарников."/>
+		
+		<text name="setting_lumberJack_showDebug" text="Показать отладочный дисплей"/>
+		<text name="toolTip_lumberJack_showDebug" text="Показать текстовую и визуальную информацию мода для отладки."/>
+		
+    </texts>
+</l10n>
