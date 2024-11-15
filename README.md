@@ -1,2 +1,3 @@
 # FS25_LumberJack
-Mod for FS25. Please download latest release below.
+
+Please be patient - I hope to submit this to GIANTS before Monday 18th November.
