@@ -27,12 +27,19 @@ LumberJack.maxWoodchips = 2000
 LumberJack.superStrength = false
 LumberJack.lockStrength = false
 LumberJack.strengthHeld = false
-LumberJack.stumpGrindingPossible = false
 LumberJack.useChainsawFlag = false
+LumberJack.stumpGrindingPossible = false
 LumberJack.bushCuttingPossible = false
-LumberJack.initialised = false
 LumberJack.destroyAllFoliage = false
+LumberJack.initialised = false
 
+-- FOUND USING RAY CAST
+LumberJack.closestObject = nil
+
+-- FOUND USING GIANTS RING SELECTOR
+LumberJack.chainsawShape = nil
+LumberJack.chainsawCanCut = nil
+		
 -- BUSH LAYER STRINGS
 LumberJack.foliageSearchNames = {
 	"bush",
@@ -40,10 +47,11 @@ LumberJack.foliageSearchNames = {
 }
 
 LumberJack.ringColour = {
-	white  = {1, 1, 1, 0},
-	orange = {1, 0.27, 0, 1},
-	red    = {0.8, 0.05, 0.05, 1},
-	green  = {0.395, 0.925, 0.115, 1}
+	white   = {1, 1, 1, 0},
+	orange  = {1, 0.27, 0, 1},
+	red     = {0.8, 0.05, 0.05, 1},
+	green   = {0.395, 0.925, 0.115, 1},
+	yellow  = {0.925, 0.395, 0.05, 1},
 }
 
 source(g_currentModDirectory .. 'LumberJackSettings.lua')
@@ -124,11 +132,11 @@ function LumberJack:targetRaycastCallback(hitObjectId, x, y, z, distance)
 		LumberJack.targetLocation = {x, y, z}
 		LumberJack.targetDistance = distance
 		LumberJack.targetOnGround = hitObjectId==g_currentMission.terrainRootNode
-		if LumberJack.hitObjectId ~= hitObjectId then
+		if LumberJack.targetedSplitShapeId ~= hitObjectId then
 			if getHasClassId(hitObjectId, ClassIds.MESH_SPLIT_SHAPE) then
-				LumberJack.hitObjectId = hitObjectId
+				LumberJack.targetedSplitShapeId = hitObjectId
 			else
-				LumberJack.hitObjectId = 0
+				LumberJack.targetedSplitShapeId = nil
 			end
 		end
 	end
@@ -154,9 +162,9 @@ function LumberJack.updateTargetRaycast()
 end
 
 -- ALTERNATIVE TO "FIND SPLIT SHAPE"
-function LumberJack:getSplitShape()
-	local objectId = LumberJack.closestObjectId
-
+function LumberJack:getSplitShape(shape)
+	local objectId = shape or LumberJack.closestObject and LumberJack.closestObject.id
+	
 	if objectId~=nil and objectId~=0 and entityExists(objectId) then
 		if getHasClassId(objectId, ClassIds.MESH_SPLIT_SHAPE) then
 			if getSplitType(objectId) ~= 0 then
@@ -172,7 +180,7 @@ function LumberJack:getSplitShape()
 			end
 		end
 	end
-	return 0
+	return nil
 end
 
 
@@ -216,12 +224,6 @@ end
 function LumberJack.doToggleStrength()
 	if g_currentMission:getHasPlayerPermission("superStrength") then
 
-		if LumberJack.superStrength then
-			debugPrint("super-strength was on")
-		else
-			debugPrint("super-strength was off")
-		end
-		
 		executeConsoleCommand('gsPlayerSuperStrengthToggle')
 		SuperStrengthEvent.sendEvent(LumberJack.superStrength)
 		
@@ -294,7 +296,7 @@ end
 function LumberJack.updateVariables(dt)
 	
 	local function compareFloats(a, b)
-		local epsilon = 0.000001
+		local epsilon = 0.001
 		return math.abs(a - b) < epsilon
 	end
 	
@@ -313,13 +315,13 @@ function LumberJack.updateVariables(dt)
 		
 		-- INCREASE PICKUP DISTANCE
 		if LumberJack.superStrength then
-			g_currentMission:addExtraPrintText("Super-Strength ON")
+			g_currentMission:addExtraPrintText(g_i18n:getText("input_LUMBERJACK_STRENGTH") .. ": " .. g_i18n:getText("ui_on"))
 			if not compareFloats(HandToolHands.PICKUP_DISTANCE, LumberJack.superDistanceValue) then
 				HandToolHands.PICKUP_DISTANCE = LumberJack.superDistanceValue
 				debugPrint("PICKUP_DISTANCE = " .. LumberJack.superDistanceValue)
 			end
 		else
-			--g_currentMission:addExtraPrintText("Super-Strength off")
+			--g_currentMission:addExtraPrintText(g_i18n:getText("input_LUMBERJACK_STRENGTH") .. ": " .. g_i18n:getText("ui_off"))
 			if not compareFloats(HandToolHands.PICKUP_DISTANCE, LumberJack.normalDistanceValue) then
 				HandToolHands.PICKUP_DISTANCE = LumberJack.normalDistanceValue
 				debugPrint("PICKUP_DISTANCE = " .. LumberJack.normalDistanceValue)
@@ -349,6 +351,11 @@ function LumberJack.updateChainsaw(dt)
 	local player = g_localPlayer
 	
 	if player and player.isHoldingChainsaw then
+
+		LumberJack.stumpGrindingPossible = false
+		
+		-- g_currentMission:addExtraPrintText("chainsawShape: " .. tostring(LumberJack.chainsawShape))
+		-- g_currentMission:addExtraPrintText("chainsawCanCut: " .. tostring(LumberJack.chainsawCanCut))
 		
 		--CHECK FOR CHAINSAW
 		local handTool = player.currentHandTool
@@ -365,6 +372,18 @@ function LumberJack.updateChainsaw(dt)
 		end
 
 		local chainsaw = handTool.spec_chainsaw
+		
+		if LumberJack.chainsawShape and chainsaw.ringNode then
+			if LumberJack.chainsawCanCut then
+			-- SHOW GREEN RING SELECTOR
+				local c = LumberJack.ringColour['green']
+				setShaderParameter(chainsaw.ringNode, "colorScale", c[1], c[2], c[3], c[4], false)
+			else
+			-- SHOW ORANGE/YELLOW RING SELECTOR
+				local c = LumberJack.ringColour['yellow']
+				setShaderParameter(chainsaw.ringNode, "colorScale", c[1], c[2], c[3], c[4], false)
+			end
+		end
 			
 		if LumberJack.originalDefaultCutDuration == nil then
 			LumberJack.originalChainsawStartupTime = chainsaw.startupTime
@@ -388,68 +407,67 @@ function LumberJack.updateChainsaw(dt)
 		if chainsaw.isCutting and chainsaw.currentCutState == 3 then
 			-- debugPrint("CHAINSAW CUTTING " .. tostring(chainsaw.currentCutState))
 
-			if not LumberJack.useChainsawFlag then
+			if not LumberJack.useChainsawFlag and not g_startMissionInfo.isMultiplayer then
 				if LumberJack.chainsawShape and entityExists(LumberJack.chainsawShape) then
 					local splitShape = LumberJack.chainsawShape
 					local volume = getVolume(splitShape)
 					if volume < 0.100 then
 					-- DELETE THE SHAPE if too small to worry about (e.g. felling wedge or thin branch)
-						LumberJack:deleteSplitShape(splitShape)
+						LumberJack.deleteSplitShape(splitShape)
 					end
 				end
 				LumberJack.useChainsawFlag = true
 			end
 			
 			LumberJack:createSawdust(chainsaw)
-
 		else
-			-- debugPrint("CHAINSAW NOT CUTTING " .. tostring(handTool.currentCutState))
+			-- debugPrint("CHAINSAW NOT CUTTING " .. tostring(chainsaw.currentCutState))
 			local motor = handTool.spec_motorized
 			local isChainsawIdle = motor.currentRPM < 1.1*motor.minRPM
-			local isChainsawActive = motor.currentRPM > 0.5*motor.maxRPM
+			local isChainsawActive = motor.currentRPM > 0.8*motor.maxRPM
 
 			if not LumberJack.chainsawCanCut then
-				-- STUMP GRINDING
-				LumberJack.stumpGrindingPossible = false
-				if not LumberJack.bushCuttingActive then
-					if LumberJack.splitShapeId ~= LumberJack.closestObjectId then
 
-						local splitShape, isTree, isStump, isBranch = LumberJack:getSplitShape()
+				-- STUMP GRINDING
+				if not LumberJack.bushCuttingActive then
+					if LumberJack.closestObject and LumberJack.splitShape ~= LumberJack.closestObject then
+						local splitShape = LumberJack.closestObject.splitShape
 						if splitShape and entityExists(splitShape) then
-							LumberJack.splitShapeId = splitShape
-							LumberJack.isTree = isTree
-							LumberJack.isStump = isStump
-							LumberJack.isBranch = isBranch
+							LumberJack.splitShape = LumberJack.closestObject
 						else
-							LumberJack.splitShapeId = nil
+							LumberJack.splitShape = nil
 						end
 					end
 					
-					if LumberJack.splitShapeId and entityExists(LumberJack.splitShapeId) then
+					if LumberJack.splitShape and entityExists(LumberJack.splitShape.id) then
 					
 						if LumberJack.showDebug then
-							if LumberJack.isStump then
+							if LumberJack.splitShape.isStump then
 								g_currentMission:addExtraPrintText("Stump")
-							elseif LumberJack.isTree then
+							elseif LumberJack.splitShape.isTree then
 								g_currentMission:addExtraPrintText("Tree")
-							elseif LumberJack.isBranch then
+							elseif LumberJack.splitShape.isBranch then
 								g_currentMission:addExtraPrintText("Branch")
 							end
 						end
 
 						if LumberJack.superStrength then
-							local shape = LumberJack.splitShapeId or 0
-							local rx, _, rz = getWorldTranslation(chainsaw.ringNode)
-							LumberJack.stumpGrindingPossible = handTool:testIfCutAllowed(shape, rx, rz)
+							local shape = LumberJack.splitShape and LumberJack.splitShape.id
+							if shape and entityExists(shape) then
+								local rx, _, rz = getWorldTranslation(chainsaw.ringNode)
+								LumberJack.stumpGrindingPossible = handTool:testIfCutAllowed(shape, rx, rz)
+								if not LumberJack.stumpGrindingPossible then
+									debugPrint("Stump Grinding NOT allowed")
+								end
+							end
 						else
-							if LumberJack.isStump then
-								local shape = LumberJack.splitShapeId or 0
+							if LumberJack.splitShape.isStump then
+								local shape = LumberJack.splitShape and LumberJack.splitShape.id or 0
 								local x0,y0,z0 = getWorldTranslation(shape)
 								local y = getTerrainHeightAtWorldPos(g_currentMission.terrainRootNode, x0, y0, z0)
 								local lenBelow, lenAbove = getSplitShapePlaneExtents(shape, 0,y,0, 0,1,0)
 
 								if lenAbove < 1.5 then
-									local shape = LumberJack.splitShapeId or 0
 									local rx, _, rz = getWorldTranslation(chainsaw.ringNode)
 									LumberJack.stumpGrindingPossible = handTool:testIfCutAllowed(shape, rx, rz)
 								else
@@ -457,54 +475,44 @@ function LumberJack.updateChainsaw(dt)
 										g_currentMission:addExtraPrintText("Stump is too tall")
 									end
 								end
-								if LumberJack.showDebug then
-									g_currentMission:addExtraPrintText(string.format("below:%.3f   above:%.3f", lenBelow,lenAbove))
-								end
+								-- g_currentMission:addExtraPrintText(string.format("below:%.3f   above:%.3f", lenBelow,lenAbove))
 							end
 						end
-					else
-						if LumberJack.showDebug then
-							-- g_currentMission:addExtraPrintText("no split shape found")
-						end
+					-- else
+						-- g_currentMission:addExtraPrintText("*** NO SPLITSHAPE AVAILABLE ***")
 					end
 				end
 				
 				-- BUSH GRINDING
-				if LumberJack.destroyFoliageSize == 0 or LumberJack.stumpGrindingPossible then
+				if LumberJack.destroyFoliageSize == 0 or LumberJack.stumpGrindingPossible or LumberJack.stumpGrindingActive then
 					LumberJack.bushCuttingPossible = false
 				else
 					LumberJack.updateTargetRaycast()
 					if not LumberJack.targetLocation or not LumberJack.targetOnGround then
 						LumberJack.bushCuttingPossible = false
 					elseif isChainsawIdle or LumberJack.superStrength then
-						local shape = LumberJack.splitShapeId or 0
+						local shape = LumberJack.targetedSplitShapeId or 0
 						local rx, rz = LumberJack.targetLocation[1], LumberJack.targetLocation[3]
 						LumberJack.bushCuttingPossible = handTool:testIfCutAllowed(shape, rx, rz) and LumberJack:seekAndDestroyFoliage(rx, rz)
 					end
 				end
 
-
 				if LumberJack.stumpGrindingPossible then
 				-- SHOW RED RING SELECTOR
 					local c = LumberJack.ringColour['red']
 					setShaderParameter(chainsaw.ringNode, "colorScale", c[1], c[2], c[3], c[4], false)
-				elseif LumberJack.bushCuttingPossible then
-				-- SHOW GREEN RING SELECTOR
-					-- local c = LumberJack.ringColour['green']
-					-- setShaderParameter(chainsaw.ringNode, "colorScale", c[1], c[2], c[3], c[4], false)
-					g_currentMission:addExtraPrintText("BUSH DETECTED")
 				end
 				
 			else
 				-- CHAINSAW HAS FOUND A PLACE TO CUT THE TREE
+				
 				if LumberJack.chainsawShape and entityExists(LumberJack.chainsawShape) then
 					local shape = LumberJack.chainsawShape
-					
-					
+
 					if getVolume(shape) < 0.100 then
 						-- SHOW RED RING SELECTOR if too small to worry about (e.g. felling wedge or thin branch)
-						local c = LumberJack.ringColour.red
-						setShaderParameter(chainsaw.ringNode, "colorScale", c[1], c[2], c[3], c[4], false)
+						-- local c = LumberJack.ringColour.red
+						-- setShaderParameter(chainsaw.ringNode, "colorScale", c[1], c[2], c[3], c[4], false)
 					else
 						-- SHOW DIMENSIONS AFTER NEW CUT
 						local function getCutStartEnd(chainsaw)
@@ -528,71 +536,71 @@ function LumberJack.updateChainsaw(dt)
 						local below, above = getSplitShapePlaneExtents(shape, x0, y0, z0, localDirectionToWorld(shape, 0, 1, 0))
 						g_currentMission:addExtraPrintText(g_i18n:getText("infohud_length") .. string.format(":   %.1fm  |  %.1fm", below, above))
 	
-						if LumberJack.showDebug then
-							drawDebugLine(cutStartX,cutStartY,cutStartZ,1,1,1,cutEndX,cutEndY,cutEndZ,1,1,1)
-						end
+						-- if LumberJack.showDebug then
+							-- drawDebugLine(cutStartX,cutStartY,cutStartZ,1,1,1,cutEndX,cutEndY,cutEndZ,1,1,1)
+						-- end
 					end
 				end
 			end
 			
 			-- GRIND STUMPS USING THE CHAINSAW --
-			if LumberJack.stumpGrindingPossible then
-				if LumberJack.stumpPosition == nil then
-					LumberJack.stumpPosition = {getWorldTranslation(chainsaw.ringNode)}
-				end
-			else
-				LumberJack.stumpPosition = nil
-			end
-
 			if LumberJack.stumpGrindingPossible and isChainsawActive then
+				LumberJack.stumpGrindingActive = true
 				LumberJack.stumpGrindingTime = (LumberJack.stumpGrindingTime or 0) + dt
 				if LumberJack.stumpGrindingTime < 3000 then
 					-- STUMP GRINDING
-					-- player:lockInput(true)
-					local target = LumberJack.stumpPosition
-					local cutTranslation = {worldToLocal(handTool.graphicalNodeParent, target[1], target[2], target[3])}
-					setTranslation(handTool.graphicalNode, cutTranslation[1]/3, cutTranslation[2]/3, cutTranslation[3]/3)
-					chainsaw.isCutting = true
-					--handTool:updateParticles()
-					LumberJack:createSawdust(chainsaw, 0, target)
-					chainsaw.isCutting = false
+					local shape = LumberJack.splitShape and LumberJack.splitShape.id
+					if shape and entityExists(shape) then
+						local target = {getWorldTranslation(shape)}
+						if LumberJack.splitShape.isStump then 
+							target[2] = target[2] + 0.5
+						elseif LumberJack.splitShape.isTree then 
+							target[2] = target[2] + 1.0
+						elseif LumberJack.splitShape.isBranch then
+							target = LumberJack.targetLocation
+						end
+						
+						setShaderParameter(chainsaw.ringNode, "colorScale", 0, 0, 0, 0, false)
+						if target then
+							local cutTranslation = {worldToLocal(handTool.graphicalNodeParent, target[1], target[2], target[3])}
+							setTranslation(handTool.graphicalNode, cutTranslation[1]/3, cutTranslation[2]/3, cutTranslation[3]/3)
+						end
+						--handTool:updateParticles()
+						LumberJack:createSawdust(chainsaw, 0, target)
+					end
 				else
-					-- DELETE THE SHAPE
-					LumberJack:deleteSplitShape(LumberJack.splitShapeId)
-					LumberJack.splitShapeId = nil
-					LumberJack.stumpGrindingTime = 0
+					if LumberJack.splitShape then
+						debugPrint("DELETE SPLIT SHAPE " .. LumberJack.splitShape.id)
+						if LumberJack.deleteSplitShape(LumberJack.splitShape.id) then
+							LumberJack.splitShape = nil
+						end
+					end
+					LumberJack.stumpGrindingTime = nil
+					LumberJack.stumpGrindingActive = false
 					LumberJack.stumpGrindingPossible = false
-					-- player:lockInput(false)
+					LumberJack:createSawdust(chainsaw, -2)
 				end
 			elseif LumberJack.bushCuttingPossible and isChainsawActive then
 				LumberJack.bushCuttingActive = true
-				LumberJack.stumpGrindingTime = LumberJack.stumpGrindingTime + dt
+				LumberJack.stumpGrindingTime = (LumberJack.stumpGrindingTime or 0) + dt
 				if (LumberJack.superStrength and LumberJack.stumpGrindingTime < 100)
 				or (not LumberJack.superStrength and LumberJack.stumpGrindingTime < 1000) then
-					if not LumberJack.superStrength then
-						-- player:lockInput(true)
-					end
 					local target = LumberJack.targetLocation
 					local cutTranslation = {worldToLocal(handTool.graphicalNodeParent, target[1], target[2], target[3])}
 					setTranslation(handTool.graphicalNode, cutTranslation[1]/5, cutTranslation[2]/5, cutTranslation[3]/5)
-					chainsaw.isCutting = true
 					--handTool:updateParticles()
-					chainsaw.isCutting = false
 				else
-					
+					debugPrint("Bush Cutting - DELETE BUSH")
 					local rx, rz = LumberJack.targetLocation[1], LumberJack.targetLocation[3]
 					LumberJack:seekAndDestroyFoliage(rx, rz, true)
-					LumberJack.stumpGrindingTime = 0
+					LumberJack.stumpGrindingTime = nil
 					LumberJack.bushCuttingPossible = false
-					-- player:lockInput(false)
 				end												   
 				
 			else
-				LumberJack.stumpGrindingTime = 0
-				-- player:lockInput(false)
-				if handTool:getChainSpeedFactor() < 0.1 then
-					LumberJack.bushCuttingActive = false
-				end
+				LumberJack.stumpGrindingTime = nil
+				LumberJack.bushCuttingActive = false
+				LumberJack.stumpGrindingActive = false
 			end
 			
 			if LumberJack.useChainsawFlag then
@@ -600,14 +608,18 @@ function LumberJack.updateChainsaw(dt)
 				
 				local abortedCut = LumberJack.chainsawShape and entityExists(LumberJack.chainsawShape)
 				if abortedCut then
-					-- debugPrint("ABORTED CUT")
+					debugPrint("ABORTED CUT")
 					LumberJack:createSawdust(chainsaw, -2)
 				else
 					-- debugPrint("COMPLETED CUT")
 					LumberJack:createSawdust(chainsaw, -1)
 				end
 			end
+			
+			LumberJack.chainsawShape = nil
+			LumberJack.chainsawCanCut = nil
 		end
+
 	end
 end
 
@@ -861,25 +873,61 @@ function LumberJack:seekAndDestroyFoliage(startWorldX, startWorldZ, destroy)
 end
 
 function LumberJack.getClosestTarget(player)
+	
+	if player.currentHandTool and player.currentHandTool.spec_chainsaw then
+		local chainsaw = player.currentHandTool.spec_chainsaw
+		local chainsawCutting = chainsaw.isCutting and chainsaw.currentCutState == 3 
+		if chainsawCutting or LumberJack.bushCuttingActive or LumberJack.stumpGrindingActive then
+			-- g_currentMission:addExtraPrintText("chainsaw cutting - NO UPDATE")
+			return
+		end
+	end
+	
+	LumberJack.closestObject = nil
 
 	if not player.targeter.closestTargetsByKey then
-		debugPrint("NO closestTargetsByKey")
+		-- debugPrint("NO closestTargetsByKey")
 		return
 	end
 		
 	local size = 0
+	local distance = math.huge
 	for k, v in pairs(player.targeter.closestTargetsByKey) do
 		size = size + 1
-		LumberJack.closestObjectId = v.node
-		LumberJack.objectDistance = v.distance
-	end
-	
-	if LumberJack.closestObjectId and entityExists(LumberJack.closestObjectId) then
-		if LumberJack.closestObjectId ~= LumberJack.lastClosestObjectId then
-			LumberJack.lastClosestObjectId = LumberJack.closestObjectId
-			debugPrint("FOUND OBJECT: " .. tostring(LumberJack.closestObjectId))
+		if distance > v.distance then
+			LumberJack.closestObject = LumberJack.closestObject or {}
+			LumberJack.closestObject.id = v.node
+			LumberJack.closestObject.distance = v.distance
+			
+			local splitShapeId, isTree, isStump, isBranch = LumberJack:getSplitShape(v.node)
+			LumberJack.closestObject.splitShape = splitShapeId
+			LumberJack.closestObject.isTree = isTree
+			LumberJack.closestObject.isStump = isStump
+			LumberJack.closestObject.isBranch = isBranch
 		end
-		return LumberJack.closestObjectId
+	end
+
+	if LumberJack.closestObject and entityExists(LumberJack.closestObject.id) then
+		if LumberJack.closestObject.id ~= LumberJack.lastClosestObjectId then
+			LumberJack.lastClosestObjectId = LumberJack.closestObject.id
+			
+			if LumberJack.closestObject.splitShape then
+				if LumberJack.closestObject.isTree then
+					debugPrint("FOUND TREE: " .. tostring(LumberJack.closestObject.id))
+				elseif LumberJack.closestObject.isStump then
+					debugPrint("FOUND STUMP: " .. tostring(LumberJack.closestObject.id))
+				elseif LumberJack.closestObject.isBranch then
+					debugPrint("FOUND BRANCH: " .. tostring(LumberJack.closestObject.id))
+				end
+				if LumberJack.closestObject.splitShape ~= LumberJack.closestObject.id then
+					debugPrint("split shape id = " .. LumberJack.closestObject.splitShape)
+				end
+			else
+				debugPrint("FOUND OBJECT: " .. tostring(LumberJack.closestObject.id))
+			end
+			debugPrint(size .. " objects in range")
+		end
+		return LumberJack.closestObject
 	end
 end
 
@@ -917,13 +965,8 @@ function LumberJack:doUpdate(dt)
 		-- CHANGE GLOBAL VALUES ON FIRST RUN
 		if not LumberJack.initialised then
 			debugPrint("*** LumberJack - DEBUG ENABLED ***")
-
-			-- enable active objects debugging output:
-			if LumberJack.showDebug then
-				if g_currentMission:getIsServer() then
-					g_server.showActiveObjects = true
-				end
-			end
+			
+			LumberJack.getDecoFunctionData()
 			
 			if not g_startMissionInfo.isMultiplayer then
 				LumberJack:registerActionEvents()
@@ -935,24 +978,33 @@ function LumberJack:doUpdate(dt)
 		end
 		
 		LumberJack.getClosestTarget(player)
-		LumberJack.updateStrength(dt)
-		LumberJack.updateVariables(dt)
-		LumberJack.updateChainsaw(dt)
-		
 		-- IF OBSERVING AN OBJECT
-		if LumberJack.closestObjectId then
+		if LumberJack.closestObject then
 			-- Display Mass of LAST OBSERVED OBJECT in 'F1' Help Menu
-			local object = LumberJack.closestObjectId
+			local object = LumberJack.closestObject.id
 			if not player.currentHandToolIndex then
 				g_currentMission:addExtraPrintText(g_i18n:getText("text_MASS") .. string.format(": %.1f ", 1000*(getMass(object) or 1)) .. g_i18n:getText("text_KG"))
 			end
 		end
 		
-		LumberJack.chainsawShape = nil
-		LumberJack.chainsawCanCut = nil
-		LumberJack.objectDistance = nil
-		LumberJack.closestObjectId = nil
+		LumberJack.updateStrength(dt)
+		LumberJack.updateVariables(dt)
+		LumberJack.updateChainsaw(dt)
 		
+		-- if player.isHoldingChainsaw then
+			-- if LumberJack.bushCuttingActive then
+				-- g_currentMission:addExtraPrintText("Bush Cutting: ACTIVE")
+			-- else
+				-- g_currentMission:addExtraPrintText("Bush Cutting Possible: " .. tostring(LumberJack.bushCuttingPossible))
+			-- end
+			
+			-- if LumberJack.stumpGrindingActive then
+				-- g_currentMission:addExtraPrintText("Stump Grinding: ACTIVE")
+			-- else
+				-- g_currentMission:addExtraPrintText("Stump Grinding Possible: " .. tostring(LumberJack.stumpGrindingPossible))
+			-- end
+		-- end
+
 	end	
 	
 end
@@ -985,9 +1037,11 @@ function LumberJack:createSawdust(chainsaw, amount, position, noEventSend)
 		
 			local delta
 			if amount == -2 then
+				-- debugPrint("empty all sawdust = 0")
 				delta = 0
 				chainsaw.totalSawdust = 0
 			elseif amount == -1 then
+				-- debugPrint("set minimum sawdust = " .. minAmount)
 				delta = minAmount
 			else
 				local speed = chainsaw.cutTimePerSquareMeter or 4000
@@ -1000,14 +1054,14 @@ function LumberJack:createSawdust(chainsaw, amount, position, noEventSend)
 			if chainsaw.totalSawdust >= minAmount then
 				-- debugPrint("DROP SAWDUST " .. chainsaw.totalSawdust)
 				local positionNode = chainsaw.cutNode or chainsaw.cutGuideNode or chainsaw.ringNode
-				if not positionNode then
+				if not positionNode and not position then
 					-- debugPrint("NO DROP POSITION NODE FOUND")
-					DebugUtil.printTableRecursively(chainsaw, "--", 0, 1)
+					chainsaw.totalSawdust = 0
 					return
 				end
-				local pos = {getWorldTranslation(positionNode)}
 				
-				if position then
+				local pos = positionNode and {getWorldTranslation(positionNode)} or position
+				if positionNode and position then
 					pos[1] = position[1]
 					pos[3] = position[3]
 				end
@@ -1042,9 +1096,9 @@ function LumberJack:createSawdust(chainsaw, amount, position, noEventSend)
 
 end
 
-function LumberJack:deleteSplitShape(shape, noEventSend)
+function LumberJack.deleteSplitShape(shape, noEventSend)
 
-	if shape ~= nil and shape ~= 0 then
+	if shape and entityExists(shape) then
 		if g_currentMission:getIsServer() then
 
 			local volume = getVolume(shape)
@@ -1058,36 +1112,30 @@ function LumberJack:deleteSplitShape(shape, noEventSend)
 		
 			g_currentMission:removeKnownSplitShape(shape)
 			local isTree = getRigidBodyType(shape) == RigidBodyType.STATIC
+			-- debugPrint("split shape is TREE = " .. tostring(isTree))
 			
 			if isTree then
-				LumberJack.cutShapes = {}
-				local x, y, z = getWorldTranslation(shape)
-				local nx, ny, nz = 0, 1, 0
-				local yx, yy, yz = 1, 0, 0
-				local cutSizeY, cutSizeZ = 5, 5
-				splitShape(shape, x, y + 0.2, z, nx, ny, nz, yx, yy, yz, cutSizeY, cutSizeZ, "cutSplitShapeCallback", LumberJack)
-				g_treePlantManager:removingSplitShape(shape)
-				
-				if table.getn(LumberJack.cutShapes) == 2 then
-					local split0 = LumberJack.cutShapes[1]
-					local split1 = LumberJack.cutShapes[2]
-					local type0 = getRigidBodyType(split0.shape)
-					local type1 = getRigidBodyType(split1.shape)
-					local wasTree = (type0 == RigidBodyType.STATIC and type1 == RigidBodyType.DYNAMIC) or
-									(type1 == RigidBodyType.STATIC and type0 == RigidBodyType.DYNAMIC)
-					if wasTree then
-						delete(LumberJack.cutShapes[1].shape)
-						delete(LumberJack.cutShapes[2].shape)
-					end
+				local lodId = shape+2
+				if entityExists(lodId) and getName(lodId) == 'LOD1' then
+					debugPrint("DELETE LOD1 " .. lodId)
+					delete(lodId)
 				end
 			end
 			
 			if entityExists(shape) then
+				if isTree then
+					debugPrint("DELETE LOD0 " .. shape)
+				else
+					debugPrint("DELETE " .. shape)
+				end
 				delete(shape)
+				return true
 			end
 		else
 			DeleteShapeEvent.sendEvent(shape)
 		end
+	else
+		debugPrint("split shape id " .. shape .. " NOT VALID")
 	end
 
 end

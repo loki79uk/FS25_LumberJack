@@ -4,8 +4,8 @@
 		<text name="menu_LUMBERJACK_TITLE" text="Holzfäller"/>
 		<text name="menu_TOGGLE_STRENGTH" text="Superstärke"/>
 		<text name="input_LUMBERJACK_STRENGTH" text="Superstärke"/>
-		<text name="text_MASS" text="Masse"/>
-		<text name="text_TONNE" text="Tonne"/>
+		<text name="text_MASS" text="Gewicht"/>
+		<text name="text_TONNE" text="Tonnen"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>

@@ -24,7 +24,7 @@ function DeleteShapeEvent:readStream(streamId, connection)
 	if not connection:getIsServer() then
 		local splitShapeId = readSplitShapeIdFromStream(streamId)
 		if splitShapeId ~= 0 then
-			LumberJack:deleteSplitShape(splitShapeId, true)
+			LumberJack.deleteSplitShape(splitShapeId, true)
 		end
 	end
 end
