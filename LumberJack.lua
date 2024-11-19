@@ -419,7 +419,7 @@ function LumberJack.updateChainsaw(dt)
 				LumberJack.useChainsawFlag = true
 			end
 			
-			LumberJack:createSawdust(chainsaw)
+			LumberJack.createSawdust(chainsaw)
 		else
 			-- debugPrint("CHAINSAW NOT CUTTING " .. tostring(chainsaw.currentCutState))
 			local motor = handTool.spec_motorized
@@ -566,7 +566,7 @@ function LumberJack.updateChainsaw(dt)
 							setTranslation(handTool.graphicalNode, cutTranslation[1]/3, cutTranslation[2]/3, cutTranslation[3]/3)
 						end
 						--handTool:updateParticles()
-						LumberJack:createSawdust(chainsaw, 0, target)
+						LumberJack.createSawdust(chainsaw, 0, target)
 					end
 				else
 					if LumberJack.splitShape then
@@ -578,7 +578,7 @@ function LumberJack.updateChainsaw(dt)
 					LumberJack.stumpGrindingTime = nil
 					LumberJack.stumpGrindingActive = false
 					LumberJack.stumpGrindingPossible = false
-					LumberJack:createSawdust(chainsaw, -2)
+					LumberJack.createSawdust(chainsaw, -2)
 				end
 			elseif LumberJack.bushCuttingPossible and isChainsawActive then
 				LumberJack.bushCuttingActive = true
@@ -609,10 +609,10 @@ function LumberJack.updateChainsaw(dt)
 				local abortedCut = LumberJack.chainsawShape and entityExists(LumberJack.chainsawShape)
 				if abortedCut then
 					debugPrint("ABORTED CUT")
-					LumberJack:createSawdust(chainsaw, -2)
+					LumberJack.createSawdust(chainsaw, -2)
 				else
 					-- debugPrint("COMPLETED CUT")
-					LumberJack:createSawdust(chainsaw, -1)
+					LumberJack.createSawdust(chainsaw, -1)
 				end
 			end
 			
@@ -1028,7 +1028,7 @@ function LumberJack:update(dt)
 end
 
 
-function LumberJack:createSawdust(chainsaw, amount, position, noEventSend)
+function LumberJack.createSawdust(chainsaw, amount, position, noEventSend)
 
 	if LumberJack.createWoodchips and chainsaw then
 		if g_currentMission:getIsServer() then
@@ -1108,7 +1108,7 @@ function LumberJack.deleteSplitShape(shape, noEventSend)
 			-- debugPrint("amount: " .. tostring(amount))
 			local chainsaw = g_localPlayer.currentHandTool.spec_chainsaw
 			local cutPosition = {getWorldTranslation(shape)}
-			LumberJack:createSawdust(chainsaw, amount, cutPosition)
+			LumberJack.createSawdust(chainsaw, amount, cutPosition)
 		
 			g_currentMission:removeKnownSplitShape(shape)
 			local isTree = getRigidBodyType(shape) == RigidBodyType.STATIC

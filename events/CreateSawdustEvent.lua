@@ -35,7 +35,7 @@ function CreateSawdustEvent:readStream(streamId, connection)
 		end
 		
 		local chainsaw = self.player.currentHandTool.spec_chainsaw
-		LumberJack:createSawdust(chainsaw, self.amount, self.position, true)
+		LumberJack.createSawdust(chainsaw, self.amount, self.position, true)
 		
 	end
 end
