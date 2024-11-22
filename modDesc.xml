@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="92">
 	<author>loki_79</author>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
@@ -22,6 +22,10 @@ Features:
 - Display the weight of the viewed objects in the F1 menu
 - Chainsaw can remove stumps (grind for 3 seconds) 
 
+Changelog:
+v1.0.0.1
+- Fixed an error that would prevent the mod starting on the Asian Map
+
 Note:
 - Super strength is currently disabled in multiplayer.
 ]]>
@@ -39,6 +43,10 @@ Merkmale:
 - Bäume überall auf der Karte fällen, auch auf Land, das nicht gekauft werden kann (wie das Geschäft)
 - Masse der angezeigten Objekte im F1-Menü anzeigen
 - Kettensäge kann Stümpfe entfernen (3 Sekunden schleifen)
+
+Changelog:
+v1.0.0.1
+- Fehler behoben, der den Start der Mod auf der asiatischen Karte verhinderte
 
 Anmerkung:
 - Superstärke ist derzeit im Mehrspielermodus deaktiviert.

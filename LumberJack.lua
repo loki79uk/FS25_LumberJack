@@ -648,14 +648,16 @@ BaseMission.loadMap = Utils.overwrittenFunction(BaseMission.loadMap,
 function LumberJack.getDecoFunctionData()
 	local functionData = LumberJack.decoFunctionData
 	
-	local function createFoliageModifier(foliage)
-		local modifier = DensityMapModifier.new(foliage.terrainDataPlaneId, foliage.startStateChannel, foliage.numStateChannels, terrainRootNode)
-		modifier:setNewTypeIndexMode(DensityIndexCompareMode.ZERO)
-		
-		local filter = DensityMapFilter.new(foliage.terrainDataPlaneId, foliage.startStateChannel, foliage.numStateChannels, terrainRootNode)
-		filter:setValueCompareParams(DensityValueCompareType.GREATER, 0)
-		
-		return {modifier = modifier, filter = filter}
+	local function createFoliageModifier(foliage, terrainRootNode)
+		if foliage.terrainDataPlaneId and foliage.startStateChannel and foliage.numStateChannels and terrainRootNode then
+			local modifier = DensityMapModifier.new(foliage.terrainDataPlaneId, foliage.startStateChannel, foliage.numStateChannels, terrainRootNode)
+			modifier:setNewTypeIndexMode(DensityIndexCompareMode.ZERO)
+			
+			local filter = DensityMapFilter.new(foliage.terrainDataPlaneId, foliage.startStateChannel, foliage.numStateChannels, terrainRootNode)
+			filter:setValueCompareParams(DensityValueCompareType.GREATER, 0)
+			
+			return {modifier = modifier, filter = filter}
+		end
 	end
 
 	if functionData == nil then
@@ -675,21 +677,25 @@ function LumberJack.getDecoFunctionData()
 		
 		debugPrint("DECO FOLIAGES")
 		for index, foliage in ipairs(decoFoliages) do
-			debugPrint(foliage.terrainDataPlaneId .. " [" .. index .. "] : " .. foliage.layerName)
-			modifiers[foliage] = modifiers[foliage] or createFoliageModifier(foliage)
-			foliagesByName[foliage.layerName] = foliagesByName[foliage.layerName] or foliage
+			if foliage and foliage.layerName then
+				debugPrint(tostring(foliage.terrainDataPlaneId) .. " [" .. tostring(index) .. "] : " .. tostring(foliage.layerName))
+				modifiers[foliage] = modifiers[foliage] or createFoliageModifier(foliage, terrainRootNode)
+				foliagesByName[foliage.layerName] = foliagesByName[foliage.layerName] or foliage
+			end
 		end
 		
 		debugPrint("PAINTABLE FOLIAGES")
 		for index, foliage in ipairs(paintableFoliages) do
-			debugPrint(foliage.terrainDataPlaneId .. " [" .. index .. "] : " .. foliage.layerName)
-			modifiers[foliage] = modifiers[foliage] or createFoliageModifier(foliage)
-			foliagesByName[foliage.layerName] = foliagesByName[foliage.layerName] or foliage
+			if foliage and foliage.layerName then
+				debugPrint(tostring(foliage.terrainDataPlaneId) .. " [" .. tostring(index) .. "] : " .. tostring(foliage.layerName))
+				modifiers[foliage] = modifiers[foliage] or createFoliageModifier(foliage, terrainRootNode)
+				foliagesByName[foliage.layerName] = foliagesByName[foliage.layerName] or foliage
+			end
 		end
 
 		if LumberJack.mapI3dFilename then
 			local i = 1
-			debugPrint("search for bush layers in : " .. LumberJack.mapI3dFilename)
+			debugPrint("search for bush layers in : " .. tostring(LumberJack.mapI3dFilename))
 			
 			local xmlFile = XMLFile.load("MapI3d", LumberJack.mapI3dFilename)
 			if xmlFile then
@@ -703,7 +709,7 @@ function LumberJack.getDecoFunctionData()
 					local densityMapId = xmlFile:getInt(layerKey.."#densityMapId")
 					local numTypeIndexChannels = xmlFile:getInt(layerKey.."#numTypeIndexChannels")
 					
-					debugPrint("["..i.."] densityMapId: " .. densityMapId)
+					debugPrint("["..i.."] densityMapId: " .. tostring(densityMapId))
 
 					functionData.foliageIsBush[i] = {}
 					functionData.foliageMultilayers[i] = {}
@@ -717,7 +723,7 @@ function LumberJack.getDecoFunctionData()
 							break
 						end
 						local isBush = false
-						local layerName = xmlFile:getString(typeKey.."#name")
+						local layerName = xmlFile:getString(typeKey.."#name", "MISSING")
 						
 						for _, name in pairs(LumberJack.foliageSearchNames) do
 							if string.find(layerName:lower(), name) then
@@ -732,7 +738,7 @@ function LumberJack.getDecoFunctionData()
 							end
 						end
 						
-						debugPrint(" j="..j.." : " .. layerName)
+						debugPrint(" j="..j.." : " .. tostring(layerName))
 						j = j + 1
 					end
 					
@@ -912,6 +918,7 @@ function LumberJack.getClosestTarget(player)
 			LumberJack.lastClosestObjectId = LumberJack.closestObject.id
 			
 			if LumberJack.closestObject.splitShape then
+				-- TODO: client may not know these?
 				if LumberJack.closestObject.isTree then
 					debugPrint("FOUND TREE: " .. tostring(LumberJack.closestObject.id))
 				elseif LumberJack.closestObject.isStump then
