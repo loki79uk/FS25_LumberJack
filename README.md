@@ -1,7 +1,7 @@
 # FS25_LumberJack
 
 ### v1.0.0.0 - MODHUB release for FS25
-https://github.com/loki79uk/FS25_LumberJack/releases/tag/v1.0.0.0
+https://www.farming-simulator.com/mod.php?mod_id=303889&title=fs2025
 
 NOTE: Super strength is currently disabled in MP.
 
