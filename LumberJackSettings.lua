@@ -11,6 +11,7 @@ LumberJack.menuItems = {
 	'superDistanceValue',
 	'normalDistanceValue',
 	'maxCutDistance',
+	'defaultCutDuration',
 	'destroyFoliageSize',
 	'longHoldThreshold',
 	'doubleTapThreshold',
@@ -189,6 +190,26 @@ LumberJack.SETTINGS.maxCutDistance = {
 		"10 "..g_i18n:getText("text_METRE"),
 		"11 "..g_i18n:getText("text_METRE"),
 		"12 "..g_i18n:getText("text_METRE")
+	}
+}
+LumberJack.SETTINGS.defaultCutDuration = {
+-- LumberJack.defaultCutDuration = 4
+	['default'] = 4,
+	['permission'] = 'chainsawSettings',
+	['values'] = {0.5,1.0,1.5,2,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0},
+	['strings'] = {
+		"0.5 "..g_i18n:getText("text_SECOND"),
+		"1.0 "..g_i18n:getText("text_SECOND"),
+		"1.5 "..g_i18n:getText("text_SECOND"),
+		"2.0 "..g_i18n:getText("text_SECOND"),
+		"2.5 "..g_i18n:getText("text_SECOND"),
+		"3.0 "..g_i18n:getText("text_SECOND"),
+		"3.5 "..g_i18n:getText("text_SECOND"),
+		"4.0 "..g_i18n:getText("text_SECOND"),
+		"4.5 "..g_i18n:getText("text_SECOND"),
+		"5.0 "..g_i18n:getText("text_SECOND"),
+		"5.5 "..g_i18n:getText("text_SECOND"),
+		"6.0 "..g_i18n:getText("text_SECOND")
 	}
 }
 LumberJack.SETTINGS.longHoldThreshold = {

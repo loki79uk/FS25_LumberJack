@@ -14,7 +14,7 @@ LumberJack.superDistanceValue = 12
 LumberJack.normalDistanceValue = 3
 LumberJack.minCutDistance = 0.1
 LumberJack.maxCutDistance = 4.0
-LumberJack.defaultCutDuration = 4
+LumberJack.defaultCutDuration = 3
 LumberJack.destroyFoliageSize = 2
 LumberJack.showDebug = false
 

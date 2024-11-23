@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="92">
 	<author>loki_79</author>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
@@ -23,6 +23,8 @@ Features:
 - Chainsaw can remove stumps (grind for 3 seconds) 
 
 Changelog:
+v1.0.0.2
+- Added missing chainsaw cutting speed to the settings
 v1.0.0.1
 - Fixed an error that would prevent the mod starting on the Asian Map
 
@@ -45,6 +47,8 @@ Merkmale:
 - Kettensäge kann Stümpfe entfernen (3 Sekunden schleifen)
 
 Changelog:
+v1.0.0.2
+- Fehlende Kettensägenschnittgeschwindigkeit zu den Einstellungen hinzugefügt
 v1.0.0.1
 - Fehler behoben, der den Start der Mod auf der asiatischen Karte verhinderte
 
