@@ -33,28 +33,28 @@ Note:
 - Super strength is currently disabled in multiplayer.
 ]]>
 </en>
-<de><![CDATA[Dieser Mod fügt einige Verbesserungen der Lebensqualität hinzu, um das Abholzen von Bäumen mit der Kettensäge etwas einfacher zu machen, behält aber immer noch genug Realismus, um die Bezahlung für den Verkauf des Holzes zu verdienen.  Die Kettensäge kann nun Baumstümpfe schleifen, und der 'Superstärke'-Modus bietet auch die Möglichkeit, Bäume vollständig zu löschen.
+<de><![CDATA[Dieser Mod fügt einige Verbesserungen hinzu, welche das Fällen von Bäumen mit der Kettensäge erleichtern. Der Realismus bleibt weiterhin erhalten.  Die Kettensäge kann nun Baumstümpfe entfernen, und der "Superstärke"-Modus ermöglicht es zudem, Bäume vollständig zu entfernen.
 
 Tastenkombinationen:
 - ALT für temporäre Stärke gedrückt halten
 - Tippe ALT doppelt zum Ein-/Ausschalten der Superstärke
 
-Merkmale:
-- Leichte Zerstörung kleiner Holzstücke, ähnlich wie beim Entfernen von superfischen Ästen
+Funktionen:
+- Leichte Entfernung kleiner Holzstücke, ähnlich wie beim Entfernen von Ästen
 - Einstellbare Geschwindigkeit und Reichweite der Kettensäge
-- Einstellbare Objektmasse und Aufnahmereichweite (nur bei aktiver Superstärke)
-- Bäume überall auf der Karte fällen, auch auf Land, das nicht gekauft werden kann (wie das Geschäft)
-- Masse der angezeigten Objekte im F1-Menü anzeigen
-- Kettensäge kann Stümpfe entfernen (3 Sekunden schleifen)
+- Einstellbares Baumstammgewicht und Aufnahmereichweite (nur bei aktiver Superstärke)
+- Bäume können überall gefällt werden, auch auf ungekauften Flächen
+- Anzeige des Gewichts, aufgehobener Gegenstände
+- Kettensäge kann Stümpfe entfernen (3 Sekunden schneiden)
 
 Changelog:
 v1.0.0.2
 - Fehlende Kettensägenschnittgeschwindigkeit zu den Einstellungen hinzugefügt
 v1.0.0.1
-- Fehler behoben, der den Start der Mod auf der asiatischen Karte verhinderte
+- Fehler behoben, der das Starten des Mods auf der asiatischen Karte verhinderte
 
 Anmerkung:
-- Superstärke ist derzeit im Mehrspielermodus deaktiviert.
+- Superstärke ist derzeit für den Mehrspielermodus deaktiviert
 ]]>
 </de>
 <fr><![CDATA[Ce mod ajoute des améliorations pour simplifier l'abattage des arbres avec une tronçonneuse tout en conservant suffisamment de réalisme pour que la vente du bois reste réaliste. La tronçonneuse peut désormais broyer les souches, et le mode "Super Force" permet aussi de supprimer complètement les arbres.
