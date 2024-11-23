@@ -2,57 +2,57 @@
 <l10n>
 	<texts>
 		<text name="menu_LUMBERJACK_TITLE" text="LumberJack"/>
-		<text name="menu_TOGGLE_STRENGTH" text="Super Strength"/>
-		<text name="input_LUMBERJACK_STRENGTH" text="Super Strength"/>
-		<text name="text_MASS" text="Mass"/>
-		<text name="text_TONNE" text="tonne"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Süper Güç"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Süper Güç"/>
+		<text name="text_MASS" text="Kütle"/>
+		<text name="text_TONNE" text="ton"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>
-		<text name="text_INFINITE" text="Infinite"/>
+		<text name="text_INFINITE" text="Sonsuz"/>
 		
-		<text name="permission_lumberJack_superSpeed" text="LumberJack Speed"/>
-		<text name="permission_lumberJack_superStrength" text="LumberJack Strength"/>
-		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Chainsaw"/>
+		<text name="permission_lumberJack_superSpeed" text="LumberJack Hız"/>
+		<text name="permission_lumberJack_superStrength" text="LumberJack Güç"/>
+		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Elektrikli Testere"/>
 				
-		<text name="setting_lumberJack_cutAnywhere" text="Cut Anywhere"/>
-		<text name="toolTip_lumberJack_cutAnywhere" text="The player can use a chainsaw anywhere on the map."/>
+		<text name="setting_lumberJack_cutAnywhere" text="Herhangi Bir Yerde Kes"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="Oyuncu haritanın herhangi bir yerinde elektrikli testere kullanabilir."/>
 		
-		<text name="setting_lumberJack_createWoodchips" text="Create Woodchips"/>
-		<text name="toolTip_lumberJack_createWoodchips" text="Woodchips are created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_createWoodchips" text="Talaş Oluştur"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Ağaçlar kesilirken veya kütükler elektrikli testere ile öğütülürken talaşlar oluşur."/>
 		
-		<text name="setting_lumberJack_maxCutDistance" text="Chainsaw Cut Distance"/>
-		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance that the player can reach to cut with a chainsaw."/>
+		<text name="setting_lumberJack_maxCutDistance" text="Elektrikli Testere Kesim Mesafesi"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="Oyuncunun testere ile kesmek için ulaşabileceği maksimum mesafe."/>
 		
-		<text name="setting_lumberJack_defaultCutDuration" text="Chainsaw Cut Duration"/>
-		<text name="toolTip_lumberJack_defaultCutDuration" text="Number of seconds for a standard cut with the chainsaw."/>
+		<text name="setting_lumberJack_defaultCutDuration" text="Elektrikli Testere Kesim Süresi"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Elektrikli testere ile standart bir kesim için saniye sayısı."/>
 		
-		<text name="setting_lumberJack_superStrengthValue" text="Super Strength Value"/>
-		<text name="toolTip_lumberJack_superStrengthValue" text="Maximum weight that can be lifted when super strength is active."/>
+		<text name="setting_lumberJack_superStrengthValue" text="Süper Güç Değeri"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Süper güç aktifken kaldırılabilecek maksimum ağırlık."/>
 		
-		<text name="setting_lumberJack_normalStrengthValue" text="Normal Strength Value"/>
-		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximum weight that can be lifted by the player with normal strength."/>
+		<text name="setting_lumberJack_normalStrengthValue" text="Normal Güç Değeri"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Oyuncu tarafından normal güçle kaldırılabilecek maksimum ağırlık."/>
 		
-		<text name="setting_lumberJack_superDistanceValue" text="Super Strength Distance"/>
-		<text name="toolTip_lumberJack_superDistanceValue" text="Distance that player can reach to lift objects when super strength is active."/>
+		<text name="setting_lumberJack_superDistanceValue" text="Süper Güç Mesafesi"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="Süper güç aktifken oyuncunun nesneleri kaldırmak için ulaşabileceği mesafe."/>
 		
-		<text name="setting_lumberJack_normalDistanceValue" text="Normal Strength Distance"/>
-		<text name="toolTip_lumberJack_normalDistanceValue" text="Distance that player can reach to lift objects with normal strength."/>
+		<text name="setting_lumberJack_normalDistanceValue" text="Normal Güç Mesafesi"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="Oyuncunun normal güçle nesneleri kaldırmak için ulaşabileceği mesafe."/>
 		
-		<text name="setting_lumberJack_maxWalkingSpeed" text="Walking Speed"/>
-		<text name="toolTip_lumberJack_maxWalkingSpeed" text="The normal walking speed of the player."/>
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Yürüme Hızı"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Oyuncunun normal yürüme hızı."/>
 		
-		<text name="setting_lumberJack_maxRunningSpeed" text="Running Speed"/>
-		<text name="toolTip_lumberJack_maxRunningSpeed" text="The normal running speed of the player."/>
+		<text name="setting_lumberJack_maxRunningSpeed" text="Koşu Hızı"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="Oyuncunun normal koşu hızı."/>
 		
-		<text name="setting_lumberJack_reduceSideSpeed" text="Reduce Side Speed"/>
-		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduce the speed of the player when side stepping."/>
+		<text name="setting_lumberJack_reduceSideSpeed" text="Yan Hızı Azalt"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Yan adım atarken oyuncunun hızını azalt."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
-		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Yeşillik Yok Etme Boyutu"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Yeşillik ve çalıların yok edilmesi için algılama alanının boyutu."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
-		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
+		<text name="setting_lumberJack_showDebug" text="Hata Ayıklama Ekranını Göster"/>
+		<text name="toolTip_lumberJack_showDebug" text="Algılama alanı için hata ayıklama metni ve arayüz yazdır."/>
 		
     </texts>
 </l10n>
