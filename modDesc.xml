@@ -56,6 +56,30 @@ Anmerkung:
 - Superstärke ist derzeit im Mehrspielermodus deaktiviert.
 ]]>
 </de>
+<es><![CDATA[Este mod añade mejoras que facilitan las tareas de tala con la motosierra, pero sigue manteniendo suficiente realismo para permitir pagar por la venta de madera. La motosierra ahora puede triturar los tocones y el modo "super fuerza" ofrece la posibilidad de eliminar completamente arboles.
+
+Keyboard shortcuts:
+- Mantener ALT para "super fuerza" temporal
+- Pulsacando dos veces ALT activa/desactiva la "super fuerza
+
+Funcionalidades:
+- Eliminar facilmente pequeños trozos de madera, de forma similar a eliminar arbustos
+- Velocidad de corte de la motosierra ajustable
+- Peso de los objetos y rango de alcance ajustable (solo cuando la superfuerza está activa)
+- Cortar arboles en cualquier parte del mapa, incluso en las areas que no pueden ser compradas.
+- Muestra el peso de los objetos vistos en el menu de ayuda F1
+- La motosierra puede eliminar tocones (cortar durante 3 segundos) 
+
+Changelog:
+v1.0.0.2
+- Añadida configuración faltante de velocidad de corte de la motosierra
+v1.0.0.1
+- Corregido un error que evitaba que el mod iniciara en el mapa asiatico
+
+Nota:
+- La super fuerza está deshabilitada en el modo multijugador.
+]]>
+</es>
 	</description>
 
 	<multiplayer supported="true" />
