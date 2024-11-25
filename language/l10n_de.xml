@@ -21,6 +21,9 @@
 		<text name="setting_lumberJack_createWoodchips" text="Hackschnitzel erzeugen"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Hackschnitzel entstehen beim Fällen von Bäumen oder Zerkleinern von Baumstümpfen mit der Kettensäge."/>
 		
+		<text name="setting_lumberJack_maxWoodchips" text="Max. Hackschnitzel erzeugt"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Wie viele Hackschnitzel maximal beim Fällen von Bäumen oder Zerkleinern von Baumstümpfen mit der Kettensäge entstehen."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Kettensägenschnitt Abstand"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Maximale Entfernung, die der Spieler erreichen kann, um mit einer Kettensäge zu schneiden."/>
 		
@@ -53,6 +56,12 @@
 		
 		<text name="setting_lumberJack_showDebug" text="Debug Informationen anzeigen"/>
 		<text name="toolTip_lumberJack_showDebug" text="Schreibt Debug Ausgaben und zeigt ein Overlay für den Erkennungsbereich."/>
+        
+		<text name="setting_lumberJack_longHoldThreshold" text="Grenzwert - Langes Halten"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Wie lange eine Taste gedrückt sein muss, um als langes Halten zu zählen."/>
+        
+		<text name="setting_lumberJack_doubleTapThreshold" text="Grenzwert - Doppelklick"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Das Zeitfenster in dem eine Taste zweimal gedrückt werden muss, um als Doppelklick zu zählen."/>
 		
     </texts>
 </l10n>

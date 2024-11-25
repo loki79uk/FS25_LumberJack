@@ -229,7 +229,7 @@ LumberJack.SETTINGS.doubleTapThreshold = {
 -- LumberJack.doubleTapThreshold = 500
 	['default'] = 3,
 	['permission'] = 'superStrength',
-	['values'] = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0},
+	['values'] = {100, 200, 300, 400,500, 600, 700, 800, 900, 1000},
 	['strings'] = {
 		"0.1 "..g_i18n:getText("text_SECOND"),
 		"0.2 "..g_i18n:getText("text_SECOND"),
@@ -385,52 +385,59 @@ function LumberJack:onMenuOptionChanged(state, menuOption)
 		ToggleSawdustEvent.sendEvent(LumberJack.createWoodchips)
 	end
 
-	-- if id == 'superStrengthValue' or  id == 'normalStrengthValue' or
-	   -- id == 'superDistanceValue' or  id == 'normalDistanceValue' then
-		-- SuperStrengthEvent.sendEvent(LumberJack.superStrength)
-	-- end
+	if id == 'superStrengthValue' or  id == 'normalStrengthValue' or
+	   id == 'superDistanceValue' or  id == 'normalDistanceValue' then
+		SuperStrengthEvent.sendEvent(LumberJack.superStrength)
+	end
 	
 	LumberJack.writeSettings()
 end
 
 function LumberJack.injectMenu()
-	print("LumberJack - INJECT MENU")
+	--print("LumberJack - INJECT MENU")
 	
-	-- print("IN GAME MENU")
-	-- local inGameMenu = g_gui.screenControllers[InGameMenu]
-	-- local settingsGeneral = inGameMenu.pageSettingsGeneral
+	--print("IN GAME MENU")
+	local inGameMenu = g_gui.screenControllers[InGameMenu]
+	local settingsPage = inGameMenu.pageSettings
 
 	-- print("GAME SETTINGS")
 	-- local gameSettings = g_gui.frames["ingameMenuSettings"]
 	-- local gameSettingsLayout = g_inGameMenu["gameSettingsLayout"]
 
-	function LumberJack.addMenuOption(id)
+	function LumberJack.addBinaryMenuOption(id)
 			
 		local callback = "onMenuOptionChanged"
 		local i18n_title = "setting_lumberJack_" .. id
 		local i18n_tooltip = "toolTip_lumberJack_" .. id
 		local options = LumberJack.SETTINGS[id].strings
 
-		local original = settingsGeneral.inputHelpModeElement
-		local menuOption = original:clone(settingsGeneral.boxLayout)
-		menuOption.target = LumberJack
-		menuOption.id = id
+		local originalBox = settingsPage.checkWoodHarvesterAutoCutBox
 		
-		menuOption:setCallback("onClickCallback", callback)
-		menuOption:setDisabled(false)
+		local menuOptionBox = originalBox:clone(settingsPage.generalSettingsLayout)
+		menuOptionBox.id = id .. "box"
+		
+		local menuBinaryOption = menuOptionBox.elements[1]
+		menuBinaryOption.id = id
+		menuBinaryOption.target = LumberJack
+		
+		
+		menuBinaryOption:setCallback("onClickCallback", callback)
+		menuBinaryOption:setDisabled(false)
+		
+		
+		local toolTip = menuBinaryOption.elements[1]
+		toolTip:setText(g_i18n:getText(i18n_tooltip))
+		
 
 		--menuOption.elements[1].text = g_i18n:getText(i18n_title)
 		
-		local setting = menuOption.elements[1]
-		local toolTip = menuOption.elements[5]
-
+		local setting = menuOptionBox.elements[2]
 		setting:setText(g_i18n:getText(i18n_title))
-		toolTip:setText(g_i18n:getText(i18n_tooltip))
 		
-		menuOption:setTexts({unpack(options)})
-		menuOption:setState(LumberJack.getStateIndex(id))
+		menuBinaryOption:setTexts({unpack(options)})
+		menuBinaryOption:setState(LumberJack.getStateIndex(id))
 		
-		LumberJack.CONTROLS[id] = menuOption
+		LumberJack.CONTROLS[id] = menuBinaryOption
 		
 		print(" added " .. id)
 		-- DebugUtil.printTableRecursively(menuOption.elements, "--", 0, 1)
@@ -438,69 +445,146 @@ function LumberJack.injectMenu()
 		return menuOption
 	end
 	
-	-- for _, id in pairs(LumberJack.menuItems) do
-		-- LumberJack.addMenuOption(id)
-	-- end
 	
-	-- gameSettingsLayout:invalidateLayout()
+
+	function LumberJack.addMultiMenuOption(id)
+			
+		local callback = "onMenuOptionChanged"
+		local i18n_title = "setting_lumberJack_" .. id
+		local i18n_tooltip = "toolTip_lumberJack_" .. id
+		local options = LumberJack.SETTINGS[id].strings
+
+		local originalBox = settingsPage.multiVolumeVoiceBox
+		
+		local menuOptionBox = originalBox:clone(settingsPage.generalSettingsLayout)
+		menuOptionBox.id = id .. "box"
+		
+		local menuMultiOption = menuOptionBox.elements[1]
+		menuMultiOption.id = id
+		menuMultiOption.target = LumberJack
+		
+		
+		menuMultiOption:setCallback("onClickCallback", callback)
+		menuMultiOption:setDisabled(false)
+		
+		
+		local toolTip = menuMultiOption.elements[1]
+		toolTip:setText(g_i18n:getText(i18n_tooltip))
+		
+
+		--menuOption.elements[1].text = g_i18n:getText(i18n_title)
+		
+		local setting = menuOptionBox.elements[2]
+		setting:setText(g_i18n:getText(i18n_title))
+		
+		menuMultiOption:setTexts({unpack(options)})
+		menuMultiOption:setState(LumberJack.getStateIndex(id))
+		
+		LumberJack.CONTROLS[id] = menuMultiOption
+		
+		print(" added " .. id)
+		-- DebugUtil.printTableRecursively(menuOption.elements, "--", 0, 1)
+
+		return menuOption
+	end
+	
+	
+	
+	-- Add section
+	local sectionTitle = nil
+	for idx, elem in ipairs(settingsPage.generalSettingsLayout.elements) do
+		if elem.name == "sectionHeader" then
+			sectionTitle = elem:clone(settingsPage.generalSettingsLayout)
+			break
+		end
+	end
+	
+	if sectionTitle then
+		sectionTitle:setText(g_i18n:getText("menu_LUMBERJACK_TITLE"))
+	else
+		sectionTitle = TextElement.new()
+		sectionTitle:applyProfile("fs25_settingsSectionHeader", true)
+		sectionTitle:setText(g_i18n:getText("menu_LUMBERJACK_TITLE"))
+		sectionTitle.name = "sectionHeader"
+		settingsPage.generalSettingsLayout:addElement(sectionTitle)
+	end
+	
+	
+	
+	for _, id in pairs(LumberJack.menuItems) do
+		if #LumberJack.SETTINGS[id].values == 2 then
+			LumberJack.addBinaryMenuOption(id)
+		else
+			LumberJack.addMultiMenuOption(id)
+		end
+	end
+	
+	settingsPage.generalSettingsLayout:invalidateLayout()
+	
+	-- MULTIPLAYER PERMISSIONS
+	local multiplayerPage = inGameMenu.pageMultiplayer
+
+	function LumberJack.addMultiplayerPermission(id)
+		local newPermissionName = id..'PermissionCheckbox'
+		local i18n_title = "permission_lumberJack_" .. id
+		
+		--registerControls seems to not exist anymore
+		--multiplayerPage:registerControls({newPermissionName})
+
+		local original = multiplayerPage.cutTreesPermissionCheckbox.parent
+		local newPermissionRow = original:clone(multiplayerPage.permissionsBox)
+
+
+		local newPermissionCheckbox = newPermissionRow.elements[1]
+		newPermissionCheckbox.id = newPermissionName
+		
+		local newPermissionLabel = newPermissionRow.elements[2]
+		newPermissionLabel:setText(g_i18n:getText(i18n_title))
+		
+		table.insert(multiplayerPage.permissionRow, newPermissionRow)
+
+		multiplayerPage.controlIDs[newPermissionName] = true
+		multiplayerPage.permissionCheckboxes[id] = newPermissionCheckbox
+		multiplayerPage.checkboxPermissions[newPermissionCheckbox] = id
+
+	end
+
+	for _, id in pairs(LumberJack.multiplayerPermissions) do
+		LumberJack.addMultiplayerPermission(id)
+	end
+
+	-- ENABLE/DISABLE OPTIONS FOR CLIENTS
+	InGameMenuSettingsFrame.onFrameOpen = Utils.appendedFunction(InGameMenuSettingsFrame.onFrameOpen, function()
+
+		local isAdmin = g_currentMission:getIsServer() or g_currentMission.isMasterUser
+		
+		for _, id in pairs(LumberJack.menuItems) do
+		
+			local menuOption = LumberJack.CONTROLS[id]
+			menuOption:setState(LumberJack.getStateIndex(id))
+		
+			if LumberJack.SETTINGS[id].disabled then
+				menuOption:setDisabled(true)
+			elseif LumberJack.SETTINGS[id].serverOnly and g_server == nil then
+				menuOption:setDisabled(not isAdmin)
+			else
+			
+				local permission = LumberJack.SETTINGS[id].permission
+				local hasPermission = g_currentMission:getHasPlayerPermission(permission)
+				
+				debugPrint(string.format("Player has permission \"%s\"?: ", permission) .. tostring(hasPermission))
+			
+				local canChange = isAdmin or hasPermission or false
+				menuOption:setDisabled(not canChange)
+				
+			end
+
+		end
+
+	end)
 end
 
--- MULTIPLAYER PERMISSIONS
--- local multiplayerUsers = inGameMenu.pageMultiplayerUsers
 
--- function LumberJack.addMultiplayerPermission(id)
-
-	-- local newPermissionName = id..'PermissionCheckbox'
-	-- local i18n_title = "permission_lumberJack_" .. id
-	-- multiplayerUsers:registerControls({newPermissionName})
-
-	-- local original = multiplayerUsers.cutTreesPermissionCheckbox.parent
-	-- local newPermissionRow = original:clone(multiplayerUsers.permissionsBox)
-	-- table.insert(multiplayerUsers.permissionRow, newPermissionRow)
-
-	-- local newPermissionLabel = newPermissionRow.elements[1]
-	-- newPermissionLabel:setText(g_i18n:getText(i18n_title))
-
-	-- local newPermissionCheckbox = newPermissionRow.elements[2]
-	-- newPermissionCheckbox.id = newPermissionName
-
-	-- multiplayerUsers.controlIDs[newPermissionName] = true
-	-- multiplayerUsers.permissionCheckboxes[id] = newPermissionCheckbox
-	-- multiplayerUsers.checkboxPermissions[newPermissionCheckbox] = id
-
--- end
-
--- for _, id in pairs(LumberJack.multiplayerPermissions) do
-	-- LumberJack.addMultiplayerPermission(id)
--- end
-
---ENABLE/DISABLE OPTIONS FOR CLIENTS
--- InGameMenuGeneralSettingsFrame.onFrameOpen = Utils.appendedFunction(InGameMenuGeneralSettingsFrame.onFrameOpen, function()
-
-	-- local isAdmin = g_currentMission:getIsServer() or g_currentMission.isMasterUser
-	
-	-- for _, id in pairs(LumberJack.menuItems) do
-	
-		-- local menuOption = LumberJack.CONTROLS[id]
-		-- menuOption:setState(LumberJack.getStateIndex(id))
-	
-		-- if LumberJack.SETTINGS[id].disabled then
-			-- menuOption:setDisabled(true)
-		-- elseif LumberJack.SETTINGS[id].serverOnly and g_server == nil then
-			-- menuOption:setDisabled(not isAdmin)
-		-- else
-		
-			-- local permission = LumberJack.SETTINGS[id].permission
-			-- local hasPermission = g_currentMission:getHasPlayerPermission(permission)
-		
-			-- local canChange = isAdmin or hasPermission or false
-			-- menuOption:setDisabled(not canChange)
-			
-		-- end
-
-	-- end
-
--- end)
 
 --SEND SETTINGS TO CLIENT:
 FSBaseMission.sendInitialClientState = Utils.appendedFunction(FSBaseMission.sendInitialClientState,
