@@ -26,9 +26,11 @@ function ToggleSawdustEvent:readStream(streamId, connection)
 	
 	if connection:getIsServer() then
 		local woodchipsOption = LumberJack.CONTROLS['createWoodchips']
-		local isAdmin = g_currentMission:getIsServer() or g_currentMission.isMasterUser
-		woodchipsOption:setState(LumberJack.getStateIndex('createWoodchips'))
-		woodchipsOption:setDisabled(not isAdmin)
+		if woodchipsOption then
+			local isAdmin = g_currentMission:getIsServer() or g_currentMission.isMasterUser
+			woodchipsOption:setState(LumberJack.getStateIndex('createWoodchips'))
+			woodchipsOption:setDisabled(not isAdmin)
+		end
 	else
 		ToggleSawdustEvent.sendEvent(LumberJack.createWoodchips)
 	end

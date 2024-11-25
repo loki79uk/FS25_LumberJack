@@ -64,7 +64,7 @@ addModEventListener(LumberJack)
 
 function debugPrint(str) 
 	if LumberJack.showDebug then
-		print(str)
+		print("[LumberJack] " .. str)
 	end
 end
 
@@ -77,6 +77,7 @@ function(command, superFunc, ...)
 	superFunc(command, ...)
 end
 )
+
 HandToolHands.consoleCommandToggleSuperStrength = Utils.overwrittenFunction(HandToolHands.consoleCommandToggleSuperStrength,
 function(self, superFunc, ...)
 	LumberJack.superStrength = not LumberJack.superStrength
@@ -222,9 +223,11 @@ function LumberJack:strengthKeyCallback(id, state)
 end
 
 function LumberJack.doToggleStrength()
+	--debugPrint("doToggleStrength")
 	if g_currentMission:getHasPlayerPermission("superStrength") then
 
-		executeConsoleCommand('gsPlayerSuperStrengthToggle')
+		LumberJack.superStrength = not LumberJack.superStrength
+		--executeConsoleCommand('gsPlayerSuperStrengthToggle')
 		SuperStrengthEvent.sendEvent(LumberJack.superStrength)
 		
 		if LumberJack.superStrength then
@@ -260,9 +263,10 @@ function LumberJack.updateStrength(dt)
 		
 		if LumberJack.strengthKeyState == 1 then -- KEY DOWN
 			LumberJack.holdTime = LumberJack.holdTime + dt
+			--debugPrint("Running Strength Update with hold time: " .. LumberJack.holdTime)
 			if LumberJack.strengthKeyAction == true then
 				LumberJack.tapCount = LumberJack.tapCount + 1
-				-- debugPrint("TAP COUNT = " .. LumberJack.tapCount)
+				--debugPrint("TAP COUNT = " .. LumberJack.tapCount .. ", HOLD TIME = " .. LumberJack.holdTime)
 			end
 			if LumberJack.tapCount == 1 then
 				local holdThreshold = math.max(LumberJack.longHoldThreshold, LumberJack.doubleTapThreshold)
@@ -272,6 +276,7 @@ function LumberJack.updateStrength(dt)
 						LumberJack.strengthHeld = true
 						LumberJack.doToggleStrength()
 					end
+					--debugPrint("RESET TAP COUNT TO 0")
 					LumberJack.tapCount = 0
 				end
 				LumberJack.doubleTapTime = 0
@@ -290,6 +295,63 @@ function LumberJack.updateStrength(dt)
 		end
 		
 		LumberJack.strengthKeyAction = false
+	end
+end
+
+function LumberJack.setSuperStrenthClient(handToolHands, superStrengthActive)
+	--debugPrint("setSuperStrenthClient.")
+	local spec = handToolHands.spec_hands
+		
+	spec.hasSuperStrength = superStrengthActive
+	
+	
+	if spec.hasSuperStrength then
+		spec.currentMaximumMass = HandToolHands.SUPER_STRENGTH_PICKUP_MASS
+		spec.pickupDistance = HandToolHands.PICKUP_DISTANCE
+		
+		debugPrint("Enabled super strength")
+	else
+		spec.currentMaximumMass = HandToolHands.MAXIMUM_PICKUP_MASS
+		spec.pickupDistance = HandToolHands.PICKUP_DISTANCE
+		
+		debugPrint("Disabled super strength")
+	end
+	
+	local carryingPlayer = handToolHands:getCarryingPlayer()
+	
+	if carryingPlayer and carryingPlayer.isOwner then
+		carryingPlayer.targeter:removeTargetType(HandToolHands)
+		carryingPlayer.targeter:addTargetType(HandToolHands, HandToolHands.TARGET_MASK, 0.5, spec.pickupDistance)
+		return
+	else
+		return
+	end
+end
+
+function LumberJack.setSuperStrenthServer(handToolHands, superStrengthActive, mass, distance)
+	--debugPrint("setSuperStrenthServer.")
+	local spec = handToolHands.spec_hands
+	
+	spec.hasSuperStrength = superStrengthActive
+	
+	spec.currentMaximumMass = mass
+	spec.pickupDistance = distance
+	
+	
+	if spec.hasSuperStrength then
+		debugPrint("(Server) Enabled super strength.")
+	else
+		debugPrint("(Server) Disabled super strength.")
+	end
+	
+	local carryingPlayer = handToolHands:getCarryingPlayer()
+	
+	if carryingPlayer and carryingPlayer.isOwner then
+		carryingPlayer.targeter:removeTargetType(HandToolHands)
+		carryingPlayer.targeter:addTargetType(HandToolHands, HandToolHands.TARGET_MASK, 0.5, spec.pickupDistance)
+		return
+	else
+		return
 	end
 end
 
@@ -975,12 +1037,8 @@ function LumberJack:doUpdate(dt)
 			
 			LumberJack.getDecoFunctionData()
 			
-			if not g_startMissionInfo.isMultiplayer then
-				LumberJack:registerActionEvents()
-			else
-				print("LUMBERJACK SUPER STRENGTH IS CURRENTLY DISABLED FOR MULTIPLAYER")
-			end
-
+			LumberJack:registerActionEvents()
+			
 			LumberJack.initialised = true
 		end
 		
