@@ -3,25 +3,12 @@
 ### v1.0.0.0 - MODHUB release for FS25
 https://www.farming-simulator.com/mod.php?mod_id=303889&title=fs2025
 
-NOTE: Super strength is currently disabled in MP.
+- Menus are back on the menu
+- Super strength is now WORKING in MULTIPLAYER
 
-_I can't do everything at once.  I'm currently working on releasing UAL, and then I'll come back and add this.  I really need the meuns working to set permissions anyway, and implementing menus in FS25 has turned out to be a HUGE timesink..._
+*** Huge thanks to shad0wlife ***
 
-There is no in-game menu yet, but you can edit settings in the mod settings folder.  They will be loaded when you next restart, or you can reload in game using the console command: `lumberjackLoadSettings`
-```xml
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<lumberjack>
-    <cutAnywhere value="true"/>
-    <createWoodchips value="true"/>
-    <maxWoodchips value="2000.000000"/>
-    <superStrengthValue value="1000.000000"/>
-    <normalStrengthValue value="0.200000"/>
-    <superDistanceValue value="12.000000"/>
-    <normalDistanceValue value="3.000000"/>
-    <maxCutDistance value="4.000000"/>
-    <destroyFoliageSize value="2.000000"/>
-    <longHoldThreshold value="1000.000000"/>
-    <doubleTapThreshold value="500.000000"/>
-    <showDebug value="true"/>
-</lumberjack>
-```
+NOTES:
+- Individual player pick-up distances not yet working for multiplayer
+- In MP the game settings menu goes all white and looks broken after logging in as admin.  Reset after open/close menu.
+- I did have the server event handle numbers and strings too, but neither maxWoodchips or destroyFoliageSize menu updated properly, needs more work..

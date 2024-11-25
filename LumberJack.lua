@@ -56,9 +56,9 @@ LumberJack.ringColour = {
 
 source(g_currentModDirectory .. 'LumberJackSettings.lua')
 source(g_currentModDirectory .. 'events/DeleteShapeEvent.lua')
-source(g_currentModDirectory .. 'events/ToggleSawdustEvent.lua')
 source(g_currentModDirectory .. 'events/CreateSawdustEvent.lua')
 source(g_currentModDirectory .. 'events/SuperStrengthEvent.lua')
+source(g_currentModDirectory .. 'events/ToggleServerSettingEvent.lua')
 
 addModEventListener(LumberJack)
 

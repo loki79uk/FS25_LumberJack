@@ -380,9 +380,9 @@ function LumberJack:onMenuOptionChanged(state, menuOption)
 	if value ~= nil then
 		LumberJack.setValue(id, value)
 	end
-
-	if id == 'createWoodchips' then
-		ToggleSawdustEvent.sendEvent(LumberJack.createWoodchips)
+	
+	if LumberJack.SETTINGS[id].serverOnly and type(LumberJack.SETTINGS[id].values[1]) == "boolean" then
+		ToggleServerSettingEvent.sendEvent(id)
 	end
 
 	if id == 'superStrengthValue' or  id == 'normalStrengthValue' or
@@ -572,7 +572,7 @@ function LumberJack.injectMenu()
 				local permission = LumberJack.SETTINGS[id].permission
 				local hasPermission = g_currentMission:getHasPlayerPermission(permission)
 				
-				debugPrint(string.format("Player has permission \"%s\"?: ", permission) .. tostring(hasPermission))
+				debugPrint(string.format("Player has permission \"%s\"?: ", permission or "any") .. tostring(hasPermission))
 			
 				local canChange = isAdmin or hasPermission or false
 				menuOption:setDisabled(not canChange)
@@ -590,6 +590,10 @@ end
 FSBaseMission.sendInitialClientState = Utils.appendedFunction(FSBaseMission.sendInitialClientState,
 function(self, connection, user, farm)
 
-	ToggleSawdustEvent.sendEvent(LumberJack.createWoodchips)
+	for _, id in pairs(LumberJack.menuItems) do
+		if LumberJack.SETTINGS[id].serverOnly and type(LumberJack.SETTINGS[id].values[1]) == "boolean" then
+			ToggleServerSettingEvent.sendEvent(id)
+		end
+	end
 	
 end)
