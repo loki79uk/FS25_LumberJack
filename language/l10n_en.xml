@@ -21,6 +21,9 @@
 		<text name="setting_lumberJack_createWoodchips" text="Create Woodchips"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Woodchips are created when cutting trees or grinding stumps with a chainsaw."/>
 		
+		<text name="setting_lumberJack_maxWoodchips" text="Max. Woodchips"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Maximum amount of Woodchips created when cutting trees or grinding stumps with a chainsaw."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Chainsaw Cut Distance"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance that the player can reach to cut with a chainsaw."/>
 		
@@ -54,5 +57,11 @@
 		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
 		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
 		
-    </texts>
+		<text name="setting_lumberJack_longHoldThreshold" text="Long Hold Threshold"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="How long a button has to be held down to register as a long hold."/>
+		
+		<text name="setting_lumberJack_doubleTapThreshold" text="Double Tap Threshold"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="How fast a button has to be pressed twice to register as a double tap."/>
+		
+	</texts>
 </l10n>

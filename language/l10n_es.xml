@@ -54,8 +54,14 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Destrucción follaje Area"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Area de destrucción de follaje y arbustos."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Mostrar información de depuración"/>
-		<text name="toolTip_lumberJack_showDebug" text="Muestra texto de depuración y el area de detección."/>
+		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
+		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
 		
-    </texts>
+		<text name="setting_lumberJack_longHoldThreshold" text="Duración pulsación larga"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Cuanto tiempo debe mantenerse un botón para ser considerado pulsación larga."/>
+		
+		<text name="setting_lumberJack_doubleTapThreshold" text="Intervalo doble pulsación"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Intervalo de tiempo para considerar una doble pulsación."/>
+		
+	</texts>
 </l10n>

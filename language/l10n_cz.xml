@@ -21,6 +21,9 @@
 		<text name="setting_lumberJack_createWoodchips" text="Vytvořit dřevní štěpku"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Štěpka vzniká při kácení stromů nebo drcení pařezů motorovou pilou."/>
 		
+		<text name="setting_lumberJack_maxWoodchips" text="Max. Dřevní štěpka"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Maximální množství dřevní štěpky vytvořené při kácení stromů nebo drcení pařezů motorovou pilou."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Vzdálenost řezu motorovou pilou"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Maximální vzdálenost, do které hráč dosáhne při řezání motorovou pilou."/>
 		
@@ -54,5 +57,11 @@
 		<text name="setting_lumberJack_showDebug" text="Zobrazit zobrazení ladění"/>
 		<text name="toolTip_lumberJack_showDebug" text="Tisk ladicího textu a překryvu pro oblast detekce."/>
 		
-    </texts>
+		<text name="setting_lumberJack_longHoldThreshold" text="Práh dlouhého podržení"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Jak dlouho musí být tlačítko podrženo, aby bylo zaregistrováno jako dlouhé podržení."/>
+		
+		<text name="setting_lumberJack_doubleTapThreshold" text="Práh dvojitého klepnutí"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Jak rychle musí být tlačítko dvakrát stisknuto, aby bylo zaregistrováno jako dvojité klepnutí."/>
+		
+	</texts>
 </l10n>
