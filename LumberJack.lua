@@ -80,9 +80,11 @@ end
 
 HandToolHands.consoleCommandToggleSuperStrength = Utils.overwrittenFunction(HandToolHands.consoleCommandToggleSuperStrength,
 function(self, superFunc, ...)
-	LumberJack.superStrength = not LumberJack.superStrength
+	local result = superFunc(self, ...)
+	
+	LumberJack.superStrength = self.spec_hands.hasSuperStrength
 	debugPrint("called consoleCommandToggleSuperStrength - " .. tostring(LumberJack.superStrength))
-	return superFunc(self, ...)
+	return result
 end
 )
 
@@ -298,60 +300,30 @@ function LumberJack.updateStrength(dt)
 	end
 end
 
-function LumberJack.setSuperStrenthClient(handToolHands, superStrengthActive)
-	--debugPrint("setSuperStrenthClient.")
-	local spec = handToolHands.spec_hands
-		
-	spec.hasSuperStrength = superStrengthActive
-	
-	
-	if spec.hasSuperStrength then
-		spec.currentMaximumMass = HandToolHands.SUPER_STRENGTH_PICKUP_MASS
-		spec.pickupDistance = HandToolHands.PICKUP_DISTANCE
-		
-		debugPrint("Enabled super strength")
-	else
-		spec.currentMaximumMass = HandToolHands.MAXIMUM_PICKUP_MASS
-		spec.pickupDistance = HandToolHands.PICKUP_DISTANCE
-		
-		debugPrint("Disabled super strength")
-	end
-	
-	local carryingPlayer = handToolHands:getCarryingPlayer()
-	
-	if carryingPlayer and carryingPlayer.isOwner then
-		carryingPlayer.targeter:removeTargetType(HandToolHands)
-		carryingPlayer.targeter:addTargetType(HandToolHands, HandToolHands.TARGET_MASK, 0.5, spec.pickupDistance)
-		return
-	else
-		return
-	end
-end
-
-function LumberJack.setSuperStrenthServer(handToolHands, superStrengthActive, mass, distance)
+function LumberJack.setSuperStrenth(handToolHands, superStrengthActive, mass, distance)
 	--debugPrint("setSuperStrenthServer.")
 	local spec = handToolHands.spec_hands
+	local previousStatus = spec.hasSuperStrength
 	
 	spec.hasSuperStrength = superStrengthActive
 	
 	spec.currentMaximumMass = mass
 	spec.pickupDistance = distance
 	
-	
-	if spec.hasSuperStrength then
-		debugPrint("(Server) Enabled super strength.")
-	else
-		debugPrint("(Server) Disabled super strength.")
-	end
-	
 	local carryingPlayer = handToolHands:getCarryingPlayer()
-	
 	if carryingPlayer and carryingPlayer.isOwner then
 		carryingPlayer.targeter:removeTargetType(HandToolHands)
 		carryingPlayer.targeter:addTargetType(HandToolHands, HandToolHands.TARGET_MASK, 0.5, spec.pickupDistance)
-		return
+	end
+	
+	if previousStatus ~= spec.hasSuperStrength then
+		if spec.hasSuperStrength then
+			debugPrint("Enabled super strength.")
+		else
+			debugPrint("Disabled super strength.")
+		end
 	else
-		return
+		debugPrint("Updated super strength without change.")
 	end
 end
 
