@@ -5,6 +5,7 @@
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
+		<fr>Bûcheron</fr>
 	</title>
 
 	<description>
@@ -56,6 +57,30 @@ Anmerkung:
 - Superstärke ist derzeit im Mehrspielermodus deaktiviert.
 ]]>
 </de>
+<fr><![CDATA[Ce mod ajoute des améliorations pour simplifier l'abattage des arbres avec une tronçonneuse tout en conservant suffisamment de réalisme pour que la vente du bois reste réaliste. La tronçonneuse peut désormais broyer les souches, et le mode "Super Force" permet aussi de supprimer complètement les arbres.
+
+Raccourcis clavier :
+- Maintenez ALT pour la force temporaire
+- Appuyez deux fois sur ALT pour activer/désactiver la Super Force
+
+Caractéristiques :
+- Suppression facile des petites pièces de bois, similaire à l'élimination des branches fines
+- Vitesse et portée de coupe de la tronçonneuse ajustables
+- Masse des objets et portée de prise ajustables (uniquement lorsque la Super Force est activée)
+- Coupez des arbres n'importe où sur la carte, même dans des zones non achetables (par exemple chez le concessionnaire)
+- Affichage de la masse des objets consultés dans le menu F1
+- La tronçonneuse peut supprimer les souches (broyage pendant 3 secondes)
+
+Changelog :
+v1.0.0.2
+- Ajout de la vitesse de coupe manquante aux paramètres de la tronçonneuse
+v1.0.0.1
+- Correction d'une erreur empêchant le démarrage du mod sur la carte asiatique
+
+Note :
+- La Super Force est actuellement désactivée en mode multijoueur.
+]]>
+</fr>
 	</description>
 
 	<multiplayer supported="true" />
