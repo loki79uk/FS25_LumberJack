@@ -21,7 +21,10 @@
 		
 		<text name="setting_lumberJack_createWoodchips" text="Создавать щепу"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Щепа образуется при рубке деревьев или измельчении пней бензопилой."/>
-				
+		
+		<text name="setting_lumberJack_maxWoodchips" text="Макс. Щепа"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Максимальное количество древесной стружки, создаваемой при рубке деревьев или измельчении пней бензопилой."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Расстояние пропила бензопилой"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Максимальное расстояние, на котором игрок может резать бензопилой."/>
 		
@@ -33,13 +36,13 @@
 		
 		<text name="setting_lumberJack_normalStrengthValue" text="Нормальная сила"/>
 		<text name="toolTip_lumberJack_normalStrengthValue" text="Максимальный вес, который может поднять игрок с нормальной силой."/>
-
+		
 		<text name="setting_lumberJack_superDistanceValue" text="Дистанция суперсилы"/>
 		<text name="toolTip_lumberJack_superDistanceValue" text="Расстояние, на котором игрок может поднять объекты, когда активна суперсила."/>
-
+		
 		<text name="setting_lumberJack_normalDistanceValue" text="Дистанция нормальной силы"/>
 		<text name="toolTip_lumberJack_normalDistanceValue" text="Расстояние, на котором игрок может поднять предметы с нормальной силой."/>
-
+		
 		<text name="setting_lumberJack_maxWalkingSpeed" text="Скорость ходьбы"/>
 		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Нормальная скорость ходьбы игрока."/>
 		
@@ -55,5 +58,11 @@
 		<text name="setting_lumberJack_showDebug" text="Показать отладочный дисплей"/>
 		<text name="toolTip_lumberJack_showDebug" text="Показать текстовую и визуальную информацию мода для отладки."/>
 		
-    </texts>
+		<text name="setting_lumberJack_longHoldThreshold" text="Порог длительного удержания"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Сколько времени нужно удерживать кнопку, чтобы зарегистрировать ее как длительное удержание."/>
+		
+		<text name="setting_lumberJack_doubleTapThreshold" text="Порог двойного нажатия"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Как быстро нужно дважды нажать кнопку, чтобы зарегистрировать ее как двойное нажатие."/>
+		
+	</texts>
 </l10n>
