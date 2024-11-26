@@ -21,6 +21,9 @@
 		<text name="setting_lumberJack_createWoodchips" text="Crear virutas"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Se crean virutas cuando se cortan arboles o se eliminan tocones con una motosierra."/>
 		
+		<text name="setting_lumberJack_maxWoodchips" text="Virutas máximas"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Máxima cantidad de virutas que se generan virutas cuando se cortan arboles o se eliminan tocones con una motosierra."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Motosierra Distancia de corte"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Distancia máxima desde la que se puede cortar un árbol con motosierra."/>
 		
