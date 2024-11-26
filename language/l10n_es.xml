@@ -5,7 +5,7 @@
 		<text name="menu_TOGGLE_STRENGTH" text="Super Fuerza"/>
 		<text name="input_LUMBERJACK_STRENGTH" text="Super Fuerza"/>
 		<text name="text_MASS" text="Masa"/>
-		<text name="text_TONNE" text="ton"/>
+		<text name="text_TONNE" text="Tn"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>
