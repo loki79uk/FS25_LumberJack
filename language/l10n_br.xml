@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
 	<texts>
-		<text name="menu_LUMBERJACK_TITLE" text="LumberJack"/>
-		<text name="menu_TOGGLE_STRENGTH" text="Super Strength"/>
-		<text name="input_LUMBERJACK_STRENGTH" text="Super Strength"/>
-		<text name="text_MASS" text="Mass"/>
-		<text name="text_TONNE" text="tonne"/>
+		<text name="menu_LUMBERJACK_TITLE" text="Lenhador"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Super Força"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Super Força"/>
+		<text name="text_MASS" text="Massa"/>
+		<text name="text_TONNE" text="ton"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>
-		<text name="text_INFINITE" text="Infinite"/>
+		<text name="text_INFINITE" text="Infinito"/>
 		
-		<text name="permission_lumberJack_superSpeed" text="LumberJack Speed"/>
-		<text name="permission_lumberJack_superStrength" text="LumberJack Strength"/>
-		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Chainsaw"/>
+		<text name="permission_lumberJack_superSpeed" text="Velocidade do Lenhador"/>
+		<text name="permission_lumberJack_superStrength" text="Força do Lenhador"/>
+		<text name="permission_lumberJack_chainsawSettings" text="Motosserra do Lenhador"/>
 				
-		<text name="setting_lumberJack_cutAnywhere" text="Cut Anywhere"/>
-		<text name="toolTip_lumberJack_cutAnywhere" text="The player can use a chainsaw anywhere on the map."/>
+		<text name="setting_lumberJack_cutAnywhere" text="Cortar em Qualquer Lugar"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="O jogador pode usar a motosserra em qualquer lugar do mapa."/>
 		
-		<text name="setting_lumberJack_createWoodchips" text="Create Woodchips"/>
-		<text name="toolTip_lumberJack_createWoodchips" text="Woodchips are created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_createWoodchips" text="Criar Lascas de Madeira"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Lascas de madeira são criadas ao cortar árvores ou moer tocos com a motosserra."/>
 		
-		<text name="setting_lumberJack_maxWoodchips" text="Max. Woodchips"/>
-		<text name="toolTip_lumberJack_maxWoodchips" text="Maximum amount of Woodchips created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_maxWoodchips" text="Máx. Lascas de Madeira"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Quantidade máxima de lascas de madeira criadas ao cortar árvores ou moer tocos com a motosserra."/>
 		
-		<text name="setting_lumberJack_maxCutDistance" text="Chainsaw Cut Distance"/>
-		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance that the player can reach to cut with a chainsaw."/>
+		<text name="setting_lumberJack_maxCutDistance" text="Distância de Corte da Motosserra"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="A distância máxima que o jogador pode alcançar para cortar com a motosserra."/>
 		
-		<text name="setting_lumberJack_defaultCutDuration" text="Chainsaw Cut Duration"/>
-		<text name="toolTip_lumberJack_defaultCutDuration" text="Number of seconds for a standard cut with the chainsaw."/>
+		<text name="setting_lumberJack_defaultCutDuration" text="Duração de Corte com a Motosserra"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="O tempo em segundos para realizar um corte padrão com a motosserra."/>
 		
-		<text name="setting_lumberJack_superStrengthValue" text="Super Strength Value"/>
-		<text name="toolTip_lumberJack_superStrengthValue" text="Maximum weight that can be lifted when super strength is active."/>
+		<text name="setting_lumberJack_superStrengthValue" text="Valor da Super Força"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="O peso máximo que pode ser levantado com a super força ativada."/>
 		
-		<text name="setting_lumberJack_normalStrengthValue" text="Normal Strength Value"/>
-		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximum weight that can be lifted by the player with normal strength."/>
+		<text name="setting_lumberJack_normalStrengthValue" text="Valor da Força Normal"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="O peso máximo que o jogador pode levantar com força normal."/>
 		
-		<text name="setting_lumberJack_superDistanceValue" text="Super Strength Distance"/>
-		<text name="toolTip_lumberJack_superDistanceValue" text="Distance that player can reach to lift objects when super strength is active."/>
+		<text name="setting_lumberJack_superDistanceValue" text="Distância da Super Força"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="A distância que o jogador pode alcançar para levantar objetos com a super força ativada."/>
 		
-		<text name="setting_lumberJack_normalDistanceValue" text="Normal Strength Distance"/>
-		<text name="toolTip_lumberJack_normalDistanceValue" text="Distance that player can reach to lift objects with normal strength."/>
+		<text name="setting_lumberJack_normalDistanceValue" text="Distância da Força Normal"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="A distância que o jogador pode alcançar para levantar objetos com força normal."/>
 		
-		<text name="setting_lumberJack_maxWalkingSpeed" text="Walking Speed"/>
-		<text name="toolTip_lumberJack_maxWalkingSpeed" text="The normal walking speed of the player."/>
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Velocidade ao Caminhar"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="A velocidade normal de caminhada do jogador."/>
 		
-		<text name="setting_lumberJack_maxRunningSpeed" text="Running Speed"/>
-		<text name="toolTip_lumberJack_maxRunningSpeed" text="The normal running speed of the player."/>
+		<text name="setting_lumberJack_maxRunningSpeed" text="Velocidade ao Correr"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="A velocidade normal de corrida do jogador."/>
 		
-		<text name="setting_lumberJack_reduceSideSpeed" text="Reduce Side Speed"/>
-		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduce the speed of the player when side stepping."/>
+		<text name="setting_lumberJack_reduceSideSpeed" text="Reduzir Velocidade Lateral"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduz a velocidade do jogador ao mover-se lateralmente."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
-		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Tamanho da Área de Destruição"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="O tamanho da área de detecção para destruir vegetação e arbustos."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
-		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
+		<text name="setting_lumberJack_showDebug" text="Exibir Informações de Depuração"/>
+		<text name="toolTip_lumberJack_showDebug" text="Exibe informações de depuração e uma sobreposição para a área de detecção."/>
 		
-		<text name="setting_lumberJack_longHoldThreshold" text="Long Hold Threshold"/>
-		<text name="toolTip_lumberJack_longHoldThreshold" text="How long a button has to be held down to register as a long hold."/>
-		
-		<text name="setting_lumberJack_doubleTapThreshold" text="Double Tap Threshold"/>
-		<text name="toolTip_lumberJack_doubleTapThreshold" text="How fast a button has to be pressed twice to register as a double tap."/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Limite - Pressionamento Longo"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Por quanto tempo um botão precisa ser pressionado para contar como um pressionamento longo."/>
+
+		<text name="setting_lumberJack_doubleTapThreshold" text="Limite - Duplo Clique"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="O intervalo de tempo em que um botão deve ser pressionado duas vezes para contar como um duplo clique."/>
 		
 	</texts>
 </l10n>
