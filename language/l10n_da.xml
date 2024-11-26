@@ -20,7 +20,10 @@
 		
 		<text name="setting_lumberJack_createWoodchips" text="Lav Træflis"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Træflis bliver lavet ved skæring i træer eller fjerning af stubbe med en kædesav."/>
-				
+		
+		<text name="setting_lumberJack_maxWoodchips" text="Max. Træflis"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Maksimal mængde træflis, der skabes, når man fælder træer eller sliber stubbe med en motorsav."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Kædesav Skære Distance"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance spiller kan række til skæring med en kædesav."/>
 		
@@ -32,13 +35,13 @@
 		
 		<text name="setting_lumberJack_normalStrengthValue" text="Normale Kræfter Værdi"/>
 		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximum vægt der kan løftes af spiller med normale kræfter."/>
-
+		
 		<text name="setting_lumberJack_superDistanceValue" text="Super Stærk Distance"/>
 		<text name="toolTip_lumberJack_superDistanceValue" text="Distance spiller kan nå for at løfte objekter når super kræfter er aktiv."/>
-
+		
 		<text name="setting_lumberJack_normalDistanceValue" text="Normale Kræfter Distance"/>
 		<text name="toolTip_lumberJack_normalDistanceValue" text="Distance spiller kan nå for at løfte objekter med normale kræfter."/>
-
+		
 		<text name="setting_lumberJack_maxWalkingSpeed" text="Gå Hastighed"/>
 		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Den normale gå hastighed af spiller."/>
 		
@@ -48,11 +51,17 @@
 		<text name="setting_lumberJack_reduceSideSpeed" text="Reducer sidehastigheden"/>
 		<text name="toolTip_lumberJack_reduceSideSpeed" text="Sænk spillerens hastighed, når han træder til siden."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
-		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Ødelæg løvstørrelse"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Størrelsen på detekteringsområdet for ødelæggelse af løv og buske."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
-		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
+		<text name="setting_lumberJack_showDebug" text="Vis fejlfindingsvisning"/>
+		<text name="toolTip_lumberJack_showDebug" text="Udskriv fejlsøgningstekst og overlay for detekteringsområdet."/>
 		
-    </texts>
+		<text name="setting_lumberJack_longHoldThreshold" text="Tærskel for langt hold"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Hvor længe en knap skal holdes nede for at blive registreret som et langt hold."/>
+		
+		<text name="setting_lumberJack_doubleTapThreshold" text="Tærskel for dobbelttryk"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Hvor hurtigt en knap skal trykkes ned to gange for at blive registreret som et dobbelttryk."/>
+		
+	</texts>
 </l10n>

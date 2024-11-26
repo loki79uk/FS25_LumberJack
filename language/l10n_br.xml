@@ -21,6 +21,9 @@
 		<text name="setting_lumberJack_createWoodchips" text="Criar Lascas de Madeira"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Lascas de madeira são criadas ao cortar árvores ou moer tocos com a motosserra."/>
 		
+		<text name="setting_lumberJack_maxWoodchips" text="Máx. Lascas de Madeira"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Quantidade máxima de lascas de madeira criadas ao cortar árvores ou moer tocos com a motosserra."/>
+		
 		<text name="setting_lumberJack_maxCutDistance" text="Distância de Corte da Motosserra"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="A distância máxima que o jogador pode alcançar para cortar com a motosserra."/>
 		
@@ -54,5 +57,11 @@
 		<text name="setting_lumberJack_showDebug" text="Exibir Informações de Depuração"/>
 		<text name="toolTip_lumberJack_showDebug" text="Exibe informações de depuração e uma sobreposição para a área de detecção."/>
 		
-    </texts>
+		<text name="setting_lumberJack_longHoldThreshold" text="Limite - Pressionamento Longo"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Por quanto tempo um botão precisa ser pressionado para contar como um pressionamento longo."/>
+
+		<text name="setting_lumberJack_doubleTapThreshold" text="Limite - Duplo Clique"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="O intervalo de tempo em que um botão deve ser pressionado duas vezes para contar como um duplo clique."/>
+		
+	</texts>
 </l10n>
