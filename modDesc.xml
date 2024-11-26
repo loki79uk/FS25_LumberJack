@@ -5,6 +5,7 @@
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
+		<br>Lenhador</br>
 	</title>
 
 	<description>
@@ -56,6 +57,31 @@ Anmerkung:
 - Superstärke ist derzeit im Mehrspielermodus deaktiviert.
 ]]>
 </de>
+<br><![CDATA[Este mod adiciona algumas melhorias na qualidade de vida para tornar o corte de árvores com a motosserra um pouco mais fácil, mas ainda mantém realismo suficiente para permitir o pagamento pela venda da madeira. A motosserra agora pode moer tocos de árvores, e o modo "super força" também oferece a capacidade de remover árvores completamente.
+
+Atalhos de teclado:
+- Segure ALT para força temporária
+- Pressione ALT duas vezes para alternar a super força ligar/desligar
+
+Recursos:
+- Remova facilmente pedaços menores de madeira, semelhante à remoção de galhos finos
+- Velocidade de corte e alcance da motosserra ajustáveis
+- Peso dos objetos e alcance ajustáveis (somente com a super força ativada)
+- Corte árvores em qualquer lugar do mapa, até mesmo em áreas que não podem ser compradas (ex.: na loja)
+- Exibição do peso dos objetos visualizados no menu F1
+- A motosserra pode remover tocos (moer por 3 segundos)
+
+Alterações:
+v1.0.0.2
+- Adicionada a velocidade de corte da motosserra ausente às configurações
+v1.0.0.1
+- Corrigido um erro que impedia o mod de iniciar no mapa asiático
+
+Nota:
+- A superforça está atualmente desativada no modo multijogador.
+]]>
+</br>
+		
 	</description>
 
 	<multiplayer supported="true" />
