@@ -22,15 +22,15 @@ function SuperStrengthEvent.new(superStrengthEnabled, maxPickableMass, maxObject
 end
 
 function SuperStrengthEvent:readStream(streamId, connection)
-	--print("SuperStrength - READ STREAM")
+	--debugPrint("SuperStrength - READ STREAM")
 	if not connection:getIsServer() then
 		local superStrengthEnabled = streamReadBool(streamId)
 		local maxPickableMass = streamReadFloat32(streamId)
 		local maxObjectDistance = streamReadFloat32(streamId)
 		
 		local player = g_currentMission:getPlayerByConnection(connection)
-		if player ~= nil then
-			LumberJack.setSuperStrenthServer(player.hands, superStrengthEnabled, maxPickableMass, maxObjectDistance)
+		if player ~= nil and player.hands ~= nil then
+			LumberJack.setSuperStrenth(player.hands, superStrengthEnabled, maxPickableMass, maxObjectDistance)
 		end
 	end
 end
@@ -45,9 +45,9 @@ function SuperStrengthEvent:writeStream(streamId, connection)
 end
 
 function SuperStrengthEvent.sendEvent(superStrengthEnabled)
-	--print("SuperStrength - RUN")
-	local player = g_currentMission.playerSystem.players[g_currentMission.playerUserId]
-	if player then
+	--debugPrint("SuperStrength - RUN")
+	local hands = g_localPlayer.hands
+	if hands then
 	
 		local maxPickableMass = LumberJack.normalStrengthValue
 		local maxObjectDistance = LumberJack.normalDistanceValue
@@ -56,12 +56,14 @@ function SuperStrengthEvent.sendEvent(superStrengthEnabled)
 			maxObjectDistance = LumberJack.superDistanceValue
 		end
 
-		LumberJack.setSuperStrenthClient(player.hands, superStrengthEnabled)
+		LumberJack.setSuperStrenth(hands, superStrengthEnabled, maxPickableMass, maxObjectDistance)
 		
 		if g_server == nil then
-			--print("SuperStrength CLIENT SEND")
+			--debugPrint("SuperStrength CLIENT SEND")
 			g_client:getServerConnection():sendEvent(SuperStrengthEvent.new(superStrengthEnabled, maxPickableMass, maxObjectDistance))
 		end
+	else
+		debugPrint("SuperStrength - hands is nil")
 	end
 	
 end
