@@ -57,10 +57,10 @@
 		<text name="setting_lumberJack_showDebug" text="Exibir Informações de Depuração"/>
 		<text name="toolTip_lumberJack_showDebug" text="Exibe informações de depuração e uma sobreposição para a área de detecção."/>
 		
-		<text name="setting_lumberJack_longHoldThreshold" text="Limite - Pressionamento Longo"/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Limite para Pressionamento Longo"/>
 		<text name="toolTip_lumberJack_longHoldThreshold" text="Por quanto tempo um botão precisa ser pressionado para contar como um pressionamento longo."/>
 
-		<text name="setting_lumberJack_doubleTapThreshold" text="Limite - Duplo Clique"/>
+		<text name="setting_lumberJack_doubleTapThreshold" text="Limite para Duplo Clique"/>
 		<text name="toolTip_lumberJack_doubleTapThreshold" text="O intervalo de tempo em que um botão deve ser pressionado duas vezes para contar como um duplo clique."/>
 		
 	</texts>
