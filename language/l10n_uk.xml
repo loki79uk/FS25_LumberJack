@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<l10n>
+	<translationContributors>Gonimy_Vetrom</translationContributors>
+	<texts>
+		<text name="menu_LUMBERJACK_TITLE" text="Лісоруб"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Суперсила"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Суперсила"/>
+		<text name="text_MASS" text="Маса"/>
+		<text name="text_TONNE" text="тон"/>
+		<text name="text_KG" text="кг"/>
+		<text name="text_METRE" text="м"/>
+		<text name="text_SECOND" text="с"/>
+		<text name="text_INFINITE" text="Безмежно"/>
+		
+		<text name="permission_lumberJack_superSpeed" text="Лісоруб: Швидкість"/>
+		<text name="permission_lumberJack_superStrength" text="Лісоруб: Сила"/>
+		<text name="permission_lumberJack_chainsawSettings" text="Лісоруб: Бензопила"/>
+				
+		<text name="setting_lumberJack_cutAnywhere" text="Пиляти всюди"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="Гравець може використовувати бензопилу в будь-якому місці карти."/>
+		
+		<text name="setting_lumberJack_createWoodchips" text="Створювати щепу"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Щепа утворюється при зрізанні дерев або подрібнюванні пнів бензопилою."/>
+		
+		<text name="setting_lumberJack_maxWoodchips" text="Макс. щепи"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Максимальна кількість стружки, яка утворюється під час рубання дерев чи подрібнюванні пнів бензопилою."/>
+
+		<text name="setting_lumberJack_maxCutDistance" text="Відстань дії пили"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="Максимальна відстань, на якій гравець може різати бензопилою."/>
+		
+		<text name="setting_lumberJack_defaultCutDuration" text="Тривалість різу бензопилою"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Кількість секунд для звичайного розпилу бензопилою."/>
+		
+		<text name="setting_lumberJack_superStrengthValue" text="Величина суперсили"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Максимальна вага, яку можливо підняти при активній суперсилі."/>
+		
+		<text name="setting_lumberJack_normalStrengthValue" text="Звичайна сила"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Максимальна вага, яку можливо підняти при звичайній силі."/>
+
+		<text name="setting_lumberJack_superDistanceValue" text="Дистанція суперсили"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="Відстань, на якій гравець може підняти об'єкти, коли активна суперсила."/>
+
+		<text name="setting_lumberJack_normalDistanceValue" text="Дистанція нормальної сили"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="Відстань, на якій гравець може піднімати об'єкти з нормальною силою."/>
+
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Швидкість ходи"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Нормальна швидкість ходьби гравця."/>
+		
+		<text name="setting_lumberJack_maxRunningSpeed" text="Швидкість бігу"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="Нормальна швидкість бігу гравця."/>
+		
+		<text name="setting_lumberJack_reduceSideSpeed" text="Зменшити швидкість в сторону"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Зниження швидкості, коли гравець рухається в сторону."/>
+		
+		<text name="setting_lumberJack_destroyFoliageSize" text="Розмір зони знищення"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Розмір зони виявлення для знищення листя і кущів."/>
+		
+		<text name="setting_lumberJack_showDebug" text="Показати дисплей налагоджування"/>
+		<text name="toolTip_lumberJack_showDebug" text="Друк відладочного тексту та накладання для області знищення."/>
+		
+				<text name="setting_lumberJack_longHoldThreshold" text="Поріг тривалого утримання"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Скільки часу необхідно утримувати кнопку, щоб зареєструвати її як тривале утримання."/>
+		
+		<text name="setting_lumberJack_doubleTapThreshold" text="Поріг подвійного натиску"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Як швидко необхідно двічі натиснути кнопку, щоб зареєструвати її як подвійний натиск."/>
+		
+    </texts>
+</l10n>
