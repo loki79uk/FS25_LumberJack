@@ -24,7 +24,6 @@
 		
 		<text name="setting_lumberJack_maxWoodchips" text="Макс. щепи"/>
 		<text name="toolTip_lumberJack_maxWoodchips" text="Максимальна кількість стружки, яка утворюється під час рубання дерев чи подрібнюванні пнів бензопилою."/>
-
 		<text name="setting_lumberJack_maxCutDistance" text="Відстань дії пили"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Максимальна відстань, на якій гравець може різати бензопилою."/>
 		
@@ -58,11 +57,11 @@
 		<text name="setting_lumberJack_showDebug" text="Показати дисплей налагоджування"/>
 		<text name="toolTip_lumberJack_showDebug" text="Друк відладочного тексту та накладання для області знищення."/>
 		
-				<text name="setting_lumberJack_longHoldThreshold" text="Поріг тривалого утримання"/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Поріг тривалого утримання"/>
 		<text name="toolTip_lumberJack_longHoldThreshold" text="Скільки часу необхідно утримувати кнопку, щоб зареєструвати її як тривале утримання."/>
 		
 		<text name="setting_lumberJack_doubleTapThreshold" text="Поріг подвійного натиску"/>
 		<text name="toolTip_lumberJack_doubleTapThreshold" text="Як швидко необхідно двічі натиснути кнопку, щоб зареєструвати її як подвійний натиск."/>
 		
-    </texts>
+	</texts>
 </l10n>
