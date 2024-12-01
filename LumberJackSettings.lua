@@ -371,7 +371,8 @@ function LumberJack.readSettings()
 	
 end
 
-function LumberJack:onMenuOptionChanged(state, menuOption)
+LumberJackControls = {}
+function LumberJackControls.onMenuOptionChanged(self, state, menuOption)
 	
 	local id = menuOption.id
 	local setting = LumberJack.SETTINGS
@@ -393,12 +394,24 @@ function LumberJack:onMenuOptionChanged(state, menuOption)
 	LumberJack.writeSettings()
 end
 
+local function updateFocusIds(element)
+	if not element then
+		return
+	end
+	element.focusId = FocusManager:serveAutoFocusId()
+	for _, child in pairs(element.elements) do
+		updateFocusIds(child)
+	end
+end
+
 function LumberJack.injectMenu()
 	--print("LumberJack - INJECT MENU")
 	
 	--print("IN GAME MENU")
 	local inGameMenu = g_gui.screenControllers[InGameMenu]
 	local settingsPage = inGameMenu.pageSettings
+	-- The name is required as otherwise the focus manager would ignore any control which has LumberJack as a callback target, believing it belonged to a different UI
+	LumberJackControls.name = settingsPage.name
 
 	-- print("GAME SETTINGS")
 	-- local gameSettings = g_gui.frames["ingameMenuSettings"]
@@ -418,7 +431,7 @@ function LumberJack.injectMenu()
 		
 		local menuBinaryOption = menuOptionBox.elements[1]
 		menuBinaryOption.id = id
-		menuBinaryOption.target = LumberJack
+		menuBinaryOption.target = LumberJackControls
 		
 		
 		menuBinaryOption:setCallback("onClickCallback", callback)
@@ -438,11 +451,15 @@ function LumberJack.injectMenu()
 		menuBinaryOption:setState(LumberJack.getStateIndex(id))
 		
 		LumberJack.CONTROLS[id] = menuBinaryOption
+
+		-- Assign new focus IDs to the controls as clone() copies the existing ones which are supposed to be unique
+		updateFocusIds(menuOptionBox)
+		table.insert(settingsPage.controlsList, menuOptionBox)
 		
 		print(" added " .. id)
 		-- DebugUtil.printTableRecursively(menuOption.elements, "--", 0, 1)
 
-		return menuOption
+		return menuOptionBox
 	end
 	
 	
@@ -461,7 +478,7 @@ function LumberJack.injectMenu()
 		
 		local menuMultiOption = menuOptionBox.elements[1]
 		menuMultiOption.id = id
-		menuMultiOption.target = LumberJack
+		menuMultiOption.target = LumberJackControls
 		
 		
 		menuMultiOption:setCallback("onClickCallback", callback)
@@ -481,11 +498,15 @@ function LumberJack.injectMenu()
 		menuMultiOption:setState(LumberJack.getStateIndex(id))
 		
 		LumberJack.CONTROLS[id] = menuMultiOption
+
+		-- Assign new focus IDs to the controls as clone() copies the existing ones which are supposed to be unique
+		updateFocusIds(menuOptionBox)
+		table.insert(settingsPage.controlsList, menuOptionBox)
 		
 		print(" added " .. id)
 		-- DebugUtil.printTableRecursively(menuOption.elements, "--", 0, 1)
 
-		return menuOption
+		return menuOptionBox
 	end
 	
 	
@@ -508,6 +529,12 @@ function LumberJack.injectMenu()
 		sectionTitle.name = "sectionHeader"
 		settingsPage.generalSettingsLayout:addElement(sectionTitle)
 	end
+	-- Apply a new focus ID in either case - either the element doesn't have one right now, or it has an already used one
+	-- This is required for proper keyboard/controller navigation in the menu
+	sectionTitle.focusId = FocusManager:serveAutoFocusId()
+	table.insert(settingsPage.controlsList, sectionTitle)
+	-- The title needs to be passed to the focus manager later on, otherwise skipping over the section title with up/down keys will fail
+	LumberJack.CONTROLS[sectionTitle.name] = sectionTitle
 	
 	
 	
@@ -584,6 +611,20 @@ function LumberJack.injectMenu()
 	end)
 end
 
+-- Allow keyboard navigation of menu options
+FocusManager.setGui = Utils.appendedFunction(FocusManager.setGui, function(_, gui)
+	if gui == "ingameMenuSettings" then
+		-- Let the focus manager know about our custom controls now (earlier than this point seems to fail)
+		for _, control in pairs(LumberJack.CONTROLS) do
+			if not FocusManager:loadElementFromCustomValues(control, nil, nil, false, false) then
+				Logging.warning("Could not register control %s with the focus manager. Selecting the control might be bugged", control.id or control.name or control.focusId)
+			end
+		end
+		-- Invalidate the layout so the up/down connections are analyzed again by the focus manager
+		local settingsPage = g_gui.screenControllers[InGameMenu].pageSettings
+		settingsPage.generalSettingsLayout:invalidateLayout()
+	end
+end)
 
 
 --SEND SETTINGS TO CLIENT:
