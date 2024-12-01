@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
 	<texts>
-		<text name="menu_LUMBERJACK_TITLE" text="LumberJack"/>
-		<text name="menu_TOGGLE_STRENGTH" text="Super Strength"/>
-		<text name="input_LUMBERJACK_STRENGTH" text="Super Strength"/>
-		<text name="text_MASS" text="Mass"/>
-		<text name="text_TONNE" text="tonne"/>
+		<text name="menu_LUMBERJACK_TITLE" text="Leñador"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Super Fuerza"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Super Fuerza"/>
+		<text name="text_MASS" text="Masa"/>
+		<text name="text_TONNE" text="Tn"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>
-		<text name="text_INFINITE" text="Infinite"/>
+		<text name="text_INFINITE" text="Infinito"/>
 		
-		<text name="permission_lumberJack_superSpeed" text="LumberJack Speed"/>
-		<text name="permission_lumberJack_superStrength" text="LumberJack Strength"/>
-		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Chainsaw"/>
+		<text name="permission_lumberJack_superSpeed" text="Leñador Velocidad"/>
+		<text name="permission_lumberJack_superStrength" text="Leñador Fuerza"/>
+		<text name="permission_lumberJack_chainsawSettings" text="Leñador Motosierra"/>
 				
-		<text name="setting_lumberJack_cutAnywhere" text="Cut Anywhere"/>
-		<text name="toolTip_lumberJack_cutAnywhere" text="The player can use a chainsaw anywhere on the map."/>
+		<text name="setting_lumberJack_cutAnywhere" text="Talar en cualquier sitio"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="El jugador puede usar la motosierra en cualquier punto del mapa."/>
 		
-		<text name="setting_lumberJack_createWoodchips" text="Create Woodchips"/>
-		<text name="toolTip_lumberJack_createWoodchips" text="Woodchips are created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_createWoodchips" text="Crear virutas"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Se crean virutas cuando se cortan arboles o se eliminan tocones con una motosierra."/>
 		
-		<text name="setting_lumberJack_maxWoodchips" text="Max. Woodchips"/>
-		<text name="toolTip_lumberJack_maxWoodchips" text="Maximum amount of Woodchips created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_maxWoodchips" text="Virutas máximas"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Máxima cantidad de virutas que se generan virutas cuando se cortan arboles o se eliminan tocones con una motosierra."/>
 		
-		<text name="setting_lumberJack_maxCutDistance" text="Chainsaw Cut Distance"/>
-		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance that the player can reach to cut with a chainsaw."/>
+		<text name="setting_lumberJack_maxCutDistance" text="Motosierra Distancia de corte"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="Distancia máxima desde la que se puede cortar un árbol con motosierra."/>
 		
-		<text name="setting_lumberJack_defaultCutDuration" text="Chainsaw Cut Duration"/>
-		<text name="toolTip_lumberJack_defaultCutDuration" text="Number of seconds for a standard cut with the chainsaw."/>
+		<text name="setting_lumberJack_defaultCutDuration" text="Motosierra Duración de corte"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Número de segundos para un corte estandar con la motosierra."/>
 		
-		<text name="setting_lumberJack_superStrengthValue" text="Super Strength Value"/>
-		<text name="toolTip_lumberJack_superStrengthValue" text="Maximum weight that can be lifted when super strength is active."/>
+		<text name="setting_lumberJack_superStrengthValue" text="Super fuerza Peso"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Peso máximo que puede ser levantado cuando está activa la super fuerza."/>
 		
-		<text name="setting_lumberJack_normalStrengthValue" text="Normal Strength Value"/>
-		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximum weight that can be lifted by the player with normal strength."/>
+		<text name="setting_lumberJack_normalStrengthValue" text="Fuerza normal Peso"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Peso máximo que puede ser levantado cuando está activa la fuerza normal."/>
 		
-		<text name="setting_lumberJack_superDistanceValue" text="Super Strength Distance"/>
-		<text name="toolTip_lumberJack_superDistanceValue" text="Distance that player can reach to lift objects when super strength is active."/>
+		<text name="setting_lumberJack_superDistanceValue" text="Super fuerza Distancia"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="Distancia desde la que se pueden levantar objetos con la super fuerza."/>
 		
-		<text name="setting_lumberJack_normalDistanceValue" text="Normal Strength Distance"/>
-		<text name="toolTip_lumberJack_normalDistanceValue" text="Distance that player can reach to lift objects with normal strength."/>
+		<text name="setting_lumberJack_normalDistanceValue" text="Fuerza normal Distancia"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="Distancia desde la que se pueden levantar objetos con la fuerza normal."/>
 		
-		<text name="setting_lumberJack_maxWalkingSpeed" text="Walking Speed"/>
-		<text name="toolTip_lumberJack_maxWalkingSpeed" text="The normal walking speed of the player."/>
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Velocidad caminando"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Velocidad normal del jugador caminando."/>
 		
-		<text name="setting_lumberJack_maxRunningSpeed" text="Running Speed"/>
-		<text name="toolTip_lumberJack_maxRunningSpeed" text="The normal running speed of the player."/>
+		<text name="setting_lumberJack_maxRunningSpeed" text="Velocidad corriendo"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="Velocidad normal del jugador corriendo."/>
 		
-		<text name="setting_lumberJack_reduceSideSpeed" text="Reduce Side Speed"/>
-		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduce the speed of the player when side stepping."/>
+		<text name="setting_lumberJack_reduceSideSpeed" text="Reducir la velocidad lateral"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduce la velocidad del jugador cuando se desplaza de lado."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
-		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Destrucción follaje Area"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Area de destrucción de follaje y arbustos."/>
 		
 		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
 		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
 		
-		<text name="setting_lumberJack_longHoldThreshold" text="Long Hold Threshold"/>
-		<text name="toolTip_lumberJack_longHoldThreshold" text="How long a button has to be held down to register as a long hold."/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Duración pulsación larga"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Cuanto tiempo debe mantenerse un botón para ser considerado pulsación larga."/>
 		
-		<text name="setting_lumberJack_doubleTapThreshold" text="Double Tap Threshold"/>
-		<text name="toolTip_lumberJack_doubleTapThreshold" text="How fast a button has to be pressed twice to register as a double tap."/>
+		<text name="setting_lumberJack_doubleTapThreshold" text="Intervalo doble pulsación"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Intervalo de tiempo para considerar una doble pulsación."/>
 		
 	</texts>
 </l10n>
