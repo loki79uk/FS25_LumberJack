@@ -616,8 +616,10 @@ FocusManager.setGui = Utils.appendedFunction(FocusManager.setGui, function(_, gu
 	if gui == "ingameMenuSettings" then
 		-- Let the focus manager know about our custom controls now (earlier than this point seems to fail)
 		for _, control in pairs(LumberJack.CONTROLS) do
-			if not FocusManager:loadElementFromCustomValues(control, nil, nil, false, false) then
-				Logging.warning("Could not register control %s with the focus manager. Selecting the control might be bugged", control.id or control.name or control.focusId)
+			if not control.focusId or not FocusManager.currentFocusData.idToElementMapping[control.focusId] then
+				if not FocusManager:loadElementFromCustomValues(control, nil, nil, false, false) then
+					Logging.warning("Could not register control %s with the focus manager. Selecting the control might be bugged", control.id or control.name or control.focusId)
+				end
 			end
 		end
 		-- Invalidate the layout so the up/down connections are analyzed again by the focus manager
