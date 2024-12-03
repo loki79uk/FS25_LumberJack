@@ -15,7 +15,7 @@
 		<text name="permission_lumberJack_superStrength" text="Houthakker Kracht"/>
 		<text name="permission_lumberJack_chainsawSettings" text="Houthakker Kettingzaag"/>
 				
-		<text name="setting_lumberJack_cutAnywhere" text="Overal Snijden"/>
+		<text name="setting_lumberJack_cutAnywhere" text="Overal Zagen"/>
 		<text name="toolTip_lumberJack_cutAnywhere" text="De speler kan overal op de kaart een kettingzaag gebruiken."/>
 		
 		<text name="setting_lumberJack_createWoodchips" text="Houtsnippers Maken"/>
