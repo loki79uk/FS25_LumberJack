@@ -322,8 +322,8 @@ function LumberJack.setSuperStrenth(handToolHands, superStrengthActive, mass, di
 		else
 			debugPrint("Disabled super strength.")
 		end
-	else
-		debugPrint("Updated super strength without change.")
+	-- else
+		-- debugPrint("Updated super strength without change.")
 	end
 end
 
@@ -964,9 +964,9 @@ function LumberJack.getClosestTarget(player)
 					debugPrint("split shape id = " .. LumberJack.closestObject.splitShape)
 				end
 			else
-				debugPrint("FOUND OBJECT: " .. tostring(LumberJack.closestObject.id))
+				-- debugPrint("FOUND OBJECT: " .. tostring(LumberJack.closestObject.id))
 			end
-			debugPrint(size .. " objects in range")
+			-- debugPrint(size .. " objects in range")
 		end
 		return LumberJack.closestObject
 	end
