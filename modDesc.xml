@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="92">
+<modDesc descVersion="93">
 	<author>loki_79</author>
-    <version>1.0.0.5</version>
+    <version>1.1.0.0</version>
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
@@ -24,13 +24,15 @@ Features:
 - Chainsaw can remove stumps (grind for 3 seconds) 
 
 Changelog:
+v1.1.0.0
+- Added menu for all settings
+- Super strength enabled in multiplayer
 v1.0.0.2
 - Added missing chainsaw cutting speed to the settings
 v1.0.0.1
 - Fixed an error that would prevent the mod starting on the Asian Map
 
-Note:
-- Super strength is currently disabled in multiplayer.
+GitHub-Link: https://github.com/loki79uk/FS25_LumberJack
 ]]>
 </en>
 <de><![CDATA[Dieser Mod fügt einige Verbesserungen hinzu, welche das Fällen von Bäumen mit der Kettensäge erleichtern. Der Realismus bleibt weiterhin erhalten.  Die Kettensäge kann nun Baumstümpfe entfernen, und der "Superstärke"-Modus ermöglicht es zudem, Bäume vollständig zu entfernen.
@@ -48,13 +50,15 @@ Funktionen:
 - Kettensäge kann Stümpfe entfernen (3 Sekunden schneiden)
 
 Changelog:
+v1.1.0.0
+- Menü für alle Einstellungen hinzugefügt
+- Superstärke im Mehrspielermodus aktiviert
 v1.0.0.2
 - Fehlende Kettensägenschnittgeschwindigkeit zu den Einstellungen hinzugefügt
 v1.0.0.1
 - Fehler behoben, der das Starten des Mods auf der asiatischen Karte verhinderte
 
-Anmerkung:
-- Superstärke ist derzeit für den Mehrspielermodus deaktiviert
+GitHub-Link: https://github.com/loki79uk/FS25_LumberJack
 ]]>
 </de>
 <fr><![CDATA[Ce mod ajoute des améliorations pour simplifier l'abattage des arbres avec une tronçonneuse tout en conservant suffisamment de réalisme pour que la vente du bois reste réaliste. La tronçonneuse peut désormais broyer les souches, et le mode "Super Force" permet aussi de supprimer complètement les arbres.
@@ -71,14 +75,16 @@ Caractéristiques :
 - Affichage de la masse des objets consultés dans le menu F1
 - La tronçonneuse peut supprimer les souches (broyage pendant 3 secondes)
 
-Changelog :
+Changelog:
+v1.1.0.0
+- Menu ajouté pour tous les paramètres
+- Super force activée en mode multijoueur
 v1.0.0.2
 - Ajout de la vitesse de coupe manquante aux paramètres de la tronçonneuse
 v1.0.0.1
 - Correction d'une erreur empêchant le démarrage du mod sur la carte asiatique
 
-Note :
-- La Super Force est actuellement désactivée en mode multijoueur.
+GitHub-Link: https://github.com/loki79uk/FS25_LumberJack
 ]]>
 </fr>
 	</description>
