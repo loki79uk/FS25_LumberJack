@@ -144,7 +144,7 @@ LumberJack.SETTINGS.superDistanceValue = {
 -- LumberJack.superDistanceValue = 12
 	['default'] = 2,
 	['permission'] = 'superStrength',
-	['values'] = {10, 12, 15, 20, 25, 30, 35, 40, 45, 50},
+	['values'] = {10, 12, 15, 20, 25, 30, 35, 40, 50},
 	['strings'] = {
 		"10 "..g_i18n:getText("text_METRE"),
 		"12 "..g_i18n:getText("text_METRE"),
@@ -154,7 +154,6 @@ LumberJack.SETTINGS.superDistanceValue = {
 		"30 "..g_i18n:getText("text_METRE"),
 		"35 "..g_i18n:getText("text_METRE"),
 		"40 "..g_i18n:getText("text_METRE"),
-		"45 "..g_i18n:getText("text_METRE"),
 		"50 "..g_i18n:getText("text_METRE"),
 	}
 }
@@ -162,24 +161,8 @@ LumberJack.SETTINGS.normalDistanceValue = {
 -- LumberJack.normalDistanceValue = 3
 	['default'] = 1,
 	['permission'] = 'superStrength',
-	['values'] = {3, 4, 5, 6, 7, 8},
+	['values'] = {3, 4, 5, 6, 7, 8, 9, 10},
 	['strings'] = {
-		"3 "..g_i18n:getText("text_METRE"),
-		"4 "..g_i18n:getText("text_METRE"),
-		"5 "..g_i18n:getText("text_METRE"),
-		"6 "..g_i18n:getText("text_METRE"),
-		"7 "..g_i18n:getText("text_METRE"),
-		"8 "..g_i18n:getText("text_METRE"),
-	}
-}
-LumberJack.SETTINGS.maxCutDistance = {
--- LumberJack.maxCutDistance = 4.0
-	['default'] = 4,
-	['permission'] = 'chainsawSettings',
-	['values'] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
-	['strings'] = {
-		"1 "..g_i18n:getText("text_METRE"),
-		"2 "..g_i18n:getText("text_METRE"),
 		"3 "..g_i18n:getText("text_METRE"),
 		"4 "..g_i18n:getText("text_METRE"),
 		"5 "..g_i18n:getText("text_METRE"),
@@ -188,15 +171,31 @@ LumberJack.SETTINGS.maxCutDistance = {
 		"8 "..g_i18n:getText("text_METRE"),
 		"9 "..g_i18n:getText("text_METRE"),
 		"10 "..g_i18n:getText("text_METRE"),
-		"11 "..g_i18n:getText("text_METRE"),
-		"12 "..g_i18n:getText("text_METRE")
+	}
+}
+LumberJack.SETTINGS.maxCutDistance = {
+-- LumberJack.maxCutDistance = 4.0
+	['default'] = 4,
+	['permission'] = 'chainsawSettings',
+	['values'] = {1, 2, 3, 4, 5, 7, 10, 12, 15, 20},
+	['strings'] = {
+		"1 "..g_i18n:getText("text_METRE"),
+		"2 "..g_i18n:getText("text_METRE"),
+		"3 "..g_i18n:getText("text_METRE"),
+		"4 "..g_i18n:getText("text_METRE"),
+		"5 "..g_i18n:getText("text_METRE"),
+		"7 "..g_i18n:getText("text_METRE"),
+		"10 "..g_i18n:getText("text_METRE"),
+		"12 "..g_i18n:getText("text_METRE"),
+		"15 "..g_i18n:getText("text_METRE"),
+		"20 "..g_i18n:getText("text_METRE")
 	}
 }
 LumberJack.SETTINGS.defaultCutDuration = {
 -- LumberJack.defaultCutDuration = 4
 	['default'] = 4,
 	['permission'] = 'chainsawSettings',
-	['values'] = {0.5,1.0,1.5,2,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0},
+	['values'] = {0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0},
 	['strings'] = {
 		"0.5 "..g_i18n:getText("text_SECOND"),
 		"1.0 "..g_i18n:getText("text_SECOND"),
@@ -599,7 +598,7 @@ function LumberJack.injectMenu()
 				local permission = LumberJack.SETTINGS[id].permission
 				local hasPermission = g_currentMission:getHasPlayerPermission(permission)
 				
-				debugPrint(string.format("Player has permission \"%s\"?: ", permission or "any") .. tostring(hasPermission))
+				-- debugPrint(string.format("Player has permission \"%s\"?: ", permission or "any") .. tostring(hasPermission))
 			
 				local canChange = isAdmin or hasPermission or false
 				menuOption:setDisabled(not canChange)
