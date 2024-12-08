@@ -1166,7 +1166,7 @@ function LumberJack.deleteSplitShape(shape, noEventSend)
 					debugPrint("DELETE " .. shape)
 				end
 				delete(shape)
-				executeConsoleCommand('gsTipCollisionsUpdate')
+				g_densityMapHeightManager:consoleCommandUpdateTipCollisions()
 				return true
 			end
 		else
