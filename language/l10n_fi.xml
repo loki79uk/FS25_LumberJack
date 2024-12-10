@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <l10n>
 	<texts>
-		<text name="menu_LUMBERJACK_TITLE" text="LumberJack"/>
-		<text name="menu_TOGGLE_STRENGTH" text="Super Strength"/>
-		<text name="input_LUMBERJACK_STRENGTH" text="Super Strength"/>
-		<text name="text_MASS" text="Mass"/>
-		<text name="text_TONNE" text="tonne"/>
+		<text name="menu_LUMBERJACK_TITLE" text="Metsuri"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Supervoima"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Supervoima"/>
+		<text name="text_MASS" text="Massa"/>
+		<text name="text_TONNE" text="tonni"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>
-		<text name="text_INFINITE" text="Infinite"/>
+		<text name="text_INFINITE" text="Loputon"/>
 		
-		<text name="permission_lumberJack_superSpeed" text="LumberJack Speed"/>
-		<text name="permission_lumberJack_superStrength" text="LumberJack Strength"/>
-		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Chainsaw"/>
+		<text name="permission_lumberJack_superSpeed" text="Metsurin Vauhti"/>
+		<text name="permission_lumberJack_superStrength" text="Metsurin Voima"/>
+		<text name="permission_lumberJack_chainsawSettings" text="Metsurin Moottorisaha"/>
 				
-		<text name="setting_lumberJack_cutAnywhere" text="Cut Anywhere"/>
-		<text name="toolTip_lumberJack_cutAnywhere" text="The player can use a chainsaw anywhere on the map."/>
+		<text name="setting_lumberJack_cutAnywhere" text="Kaada missä tahansa"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="Pelaaja voi käyttää moottorisahaa missä tahansa."/>
 		
-		<text name="setting_lumberJack_createWoodchips" text="Create Woodchips"/>
-		<text name="toolTip_lumberJack_createWoodchips" text="Woodchips are created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_createWoodchips" text="Luo haketta"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Luo haketta puita kaataessa tai kantoja jyrsiessä moottorisahalla."/>
 		
-		<text name="setting_lumberJack_maxWoodchips" text="Max. Woodchips"/>
-		<text name="toolTip_lumberJack_maxWoodchips" text="Maximum amount of Woodchips created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_maxWoodchips" text="Maks. hake"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="Maksimi hakkeen määrä puita kaataessa tai jyrsiessä moottorisahalla."/>
 		
-		<text name="setting_lumberJack_maxCutDistance" text="Chainsaw Cut Distance"/>
-		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance that the player can reach to cut with a chainsaw."/>
+		<text name="setting_lumberJack_maxCutDistance" text="Moottorisahan kaatoetäisyys"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="Maksimietäisyys jonka päästä pelaaja voi kaataa puun moottorisahalla."/>
 		
-		<text name="setting_lumberJack_defaultCutDuration" text="Chainsaw Cut Duration"/>
-		<text name="toolTip_lumberJack_defaultCutDuration" text="Number of seconds for a standard cut with the chainsaw."/>
+		<text name="setting_lumberJack_defaultCutDuration" text="Moottorisahan kaatoaika"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Kaadon pituus sekunteina moottorisahalla."/>
 		
-		<text name="setting_lumberJack_superStrengthValue" text="Super Strength Value"/>
-		<text name="toolTip_lumberJack_superStrengthValue" text="Maximum weight that can be lifted when super strength is active."/>
+		<text name="setting_lumberJack_superStrengthValue" text="Supervoiman arvo"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Maksimipaino jonka pelaaja voi nostaa supervoimilla."/>
 		
-		<text name="setting_lumberJack_normalStrengthValue" text="Normal Strength Value"/>
-		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximum weight that can be lifted by the player with normal strength."/>
+		<text name="setting_lumberJack_normalStrengthValue" text="Normaalivoiman arvo"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Maksimipaino jonka pelaaja voi nostaa normaalivoimilla."/>
 		
-		<text name="setting_lumberJack_superDistanceValue" text="Super Strength Distance"/>
-		<text name="toolTip_lumberJack_superDistanceValue" text="Distance that player can reach to lift objects when super strength is active."/>
+		<text name="setting_lumberJack_superDistanceValue" text="Supervoiman etäisyys"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="Etäisyys jonka päästä pelaaja voi nostaa asioita supervoimilla."/>
 		
-		<text name="setting_lumberJack_normalDistanceValue" text="Normal Strength Distance"/>
-		<text name="toolTip_lumberJack_normalDistanceValue" text="Distance that player can reach to lift objects with normal strength."/>
+		<text name="setting_lumberJack_normalDistanceValue" text="Normaalivoiman etäisyys"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="Etäisyys jonka päästä pelaaja voi nostaa asioita normaalivoimilla."/>
 		
-		<text name="setting_lumberJack_maxWalkingSpeed" text="Walking Speed"/>
-		<text name="toolTip_lumberJack_maxWalkingSpeed" text="The normal walking speed of the player."/>
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Kävelynopeus"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="Pelaajan normaali kävelynopeus."/>
 		
-		<text name="setting_lumberJack_maxRunningSpeed" text="Running Speed"/>
-		<text name="toolTip_lumberJack_maxRunningSpeed" text="The normal running speed of the player."/>
+		<text name="setting_lumberJack_maxRunningSpeed" text="Juoksunopeus"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="Pelaajan normaali juoksunopeus."/>
 		
-		<text name="setting_lumberJack_reduceSideSpeed" text="Reduce Side Speed"/>
-		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduce the speed of the player when side stepping."/>
+		<text name="setting_lumberJack_reduceSideSpeed" text="Vähennä sivuttaisnopeutta"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Vähennä pelaajan sivuttaisliikkumisnopeutta."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
-		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Lehvistön tuhoamisalue"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Alue jolta lehvistöä sekä pusikkoa tuhotaan."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
-		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
+		<text name="setting_lumberJack_showDebug" text="Näytä virheenjäljitystiedot"/>
+		<text name="toolTip_lumberJack_showDebug" text="Tulosta virheenjäljitystietoa sekä tekstinä että peittokuvana."/>
 		
-		<text name="setting_lumberJack_longHoldThreshold" text="Long Hold Threshold"/>
-		<text name="toolTip_lumberJack_longHoldThreshold" text="How long a button has to be held down to register as a long hold."/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Pitkän painalluksen alaraja"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Kuinka pitkään näppäintä on pidettävä pohjassa jotta se rekisteröidään pitkäksi painallukseksi."/>
 		
-		<text name="setting_lumberJack_doubleTapThreshold" text="Double Tap Threshold"/>
-		<text name="toolTip_lumberJack_doubleTapThreshold" text="How fast a button has to be pressed twice to register as a double tap."/>
+		<text name="setting_lumberJack_doubleTapThreshold" text="Tuplapainalluksen alaraja"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Kuinka nopeasti näppäintä on painettava kahdesti jotta se rekisteröidään tuplapainallukseksi."/>
 		
 	</texts>
 </l10n>
