@@ -21,16 +21,16 @@
 		<text name="setting_lumberJack_createWoodchips" text="Vytvořit dřevní štěpku"/>
 		<text name="toolTip_lumberJack_createWoodchips" text="Štěpka vzniká při kácení stromů nebo drcení pařezů motorovou pilou."/>
 		
-		<text name="setting_lumberJack_maxWoodchips" text="Max. Dřevní štěpka"/>
+		<text name="setting_lumberJack_maxWoodchips" text="Maximum dřevní štěpky"/>
 		<text name="toolTip_lumberJack_maxWoodchips" text="Maximální množství dřevní štěpky vytvořené při kácení stromů nebo drcení pařezů motorovou pilou."/>
 		
 		<text name="setting_lumberJack_maxCutDistance" text="Vzdálenost řezu motorovou pilou"/>
 		<text name="toolTip_lumberJack_maxCutDistance" text="Maximální vzdálenost, do které hráč dosáhne při řezání motorovou pilou."/>
 		
-		<text name="setting_lumberJack_defaultCutDuration" text="Doba trvání řezání motorovou pilou"/>
+		<text name="setting_lumberJack_defaultCutDuration" text="Doba trvání řezu motorovou pilou"/>
 		<text name="toolTip_lumberJack_defaultCutDuration" text="Počet sekund pro standardní řez motorovou pilou."/>
 		
-		<text name="setting_lumberJack_superStrengthValue" text="Hodnota super síly"/>
+		<text name="setting_lumberJack_superStrengthValue" text="Max. hodnota super síly"/>
 		<text name="toolTip_lumberJack_superStrengthValue" text="Maximální váha, kterou lze zvednout, když je aktivní supersíla."/>
 		
 		<text name="setting_lumberJack_normalStrengthValue" text="Běžná hodnota síly"/>
@@ -39,7 +39,7 @@
 		<text name="setting_lumberJack_superDistanceValue" text="Vzdálenost super síly"/>
 		<text name="toolTip_lumberJack_superDistanceValue" text="Vzdálenost, na kterou hráč dosáhne při zvedání předmětů, když je aktivní super síla."/>
 		
-		<text name="setting_lumberJack_normalDistanceValue" text="Vzdálenost běžhé síly"/>
+		<text name="setting_lumberJack_normalDistanceValue" text="Vzdálenost běžné síly"/>
 		<text name="toolTip_lumberJack_normalDistanceValue" text="Vzdálenost, na kterou hráč dosáhne při zvedání předmětů běžnou silou."/>
 		
 		<text name="setting_lumberJack_maxWalkingSpeed" text="Rychlost chůze"/>
@@ -51,16 +51,16 @@
 		<text name="setting_lumberJack_reduceSideSpeed" text="Snížení boční rychlosti"/>
 		<text name="toolTip_lumberJack_reduceSideSpeed" text="Snižuje rychlost hráče při pohybu do stran."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Zničit velikost listí"/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Vzdálenost ničení listí"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Velikost detekční oblasti pro ničení listí a keřů."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Zobrazit zobrazení ladění"/>
+		<text name="setting_lumberJack_showDebug" text="Zobrazit ladění"/>
 		<text name="toolTip_lumberJack_showDebug" text="Tisk ladicího textu a překryvu pro oblast detekce."/>
 		
-		<text name="setting_lumberJack_longHoldThreshold" text="Práh dlouhého podržení"/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Nastavení dlouhého podržení"/>
 		<text name="toolTip_lumberJack_longHoldThreshold" text="Jak dlouho musí být tlačítko podrženo, aby bylo zaregistrováno jako dlouhé podržení."/>
 		
-		<text name="setting_lumberJack_doubleTapThreshold" text="Práh dvojitého klepnutí"/>
+		<text name="setting_lumberJack_doubleTapThreshold" text="Nastavení dvojitého kliknutí"/>
 		<text name="toolTip_lumberJack_doubleTapThreshold" text="Jak rychle musí být tlačítko dvakrát stisknuto, aby bylo zaregistrováno jako dvojité klepnutí."/>
 		
 	</texts>
