@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="93">
 	<author>loki_79</author>
-    <version>1.1.0.0</version>
+    <version>1.1.1.0</version>
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
@@ -24,6 +24,8 @@ Features:
 - Chainsaw can remove stumps (grind for 3 seconds) 
 
 Changelog:
+v1.1.1.0
+- Fixed a bug that could occur when cutting on unowned land with "cut anywhere" disabled
 v1.1.0.0
 - Added menu for all settings
 - Super strength enabled in multiplayer
@@ -50,6 +52,8 @@ Funktionen:
 - Kettensäge kann Stümpfe entfernen (3 Sekunden schneiden)
 
 Changelog:
+v1.1.1.0
+- Fehler behoben, der auftreten konnte, wenn man versucht, auf fremdem Land mit deaktiviertem "Überall schneiden" zu sägen
 v1.1.0.0
 - Menü für alle Einstellungen hinzugefügt
 - Superstärke im Mehrspielermodus aktiviert
