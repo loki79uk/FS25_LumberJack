@@ -115,11 +115,7 @@ end
 -- ALLOW CHAINSAW CUTTING ANYWHERE ON THE MAP
 HandToolChainsaw.testIfCutAllowed = Utils.overwrittenFunction(HandToolChainsaw.testIfCutAllowed,
 function(self, superFunc, shape, x, z, ...)
-	
-	if shape == 0 or shape == nil then
-		return false
-	end
-	
+
 	local canCutTrees = g_currentMission:getHasPlayerPermission("cutTrees")
 	local canChainsaw = g_currentMission:getHasPlayerPermission("chainsawSettings")
 	local canAccess = g_currentMission.accessHandler:canFarmAccessLand(self.carryingPlayer.farmId, x, z)
@@ -129,6 +125,9 @@ function(self, superFunc, shape, x, z, ...)
 		-- debugPrint("can cut shape: " .. tostring(shape))
 		return true
 	else
+		if shape == 0 or shape == nil then
+			return false
+		end
 		return superFunc(self, shape, x, z, ...)
 	end
 end

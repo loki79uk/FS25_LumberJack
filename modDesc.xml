@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="93">
 	<author>loki_79</author>
-    <version>1.1.1.0</version>
+    <version>1.1.2.0</version>
 	<title>
 		<en>LumberJack</en>
 		<de>Holzfäller</de>
@@ -24,7 +24,7 @@ Features:
 - Chainsaw can remove stumps (grind for 3 seconds) 
 
 Changelog:
-v1.1.1.0
+v1.1.2.0
 - Fixed a bug that could occur when cutting on unowned land with "cut anywhere" disabled
 v1.1.0.0
 - Added menu for all settings
@@ -52,7 +52,7 @@ Funktionen:
 - Kettensäge kann Stümpfe entfernen (3 Sekunden schneiden)
 
 Changelog:
-v1.1.1.0
+v1.1.2.0
 - Fehler behoben, der auftreten konnte, wenn man versucht, auf fremdem Land mit deaktiviertem "Überall schneiden" zu sägen
 v1.1.0.0
 - Menü für alle Einstellungen hinzugefügt
@@ -80,6 +80,8 @@ Caractéristiques :
 - La tronçonneuse peut supprimer les souches (broyage pendant 3 secondes)
 
 Changelog:
+v1.1.2.0
+- Corrigé un bug qui pouvait se produire lors de la coupe sur un terrain non possédé avec l'option "couper partout" désactivée
 v1.1.0.0
 - Menu ajouté pour tous les paramètres
 - Super force activée en mode multijoueur
