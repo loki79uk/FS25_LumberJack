@@ -2,66 +2,66 @@
 <l10n>
 	<texts>
 		<text name="menu_LUMBERJACK_TITLE" text="LumberJack"/>
-		<text name="menu_TOGGLE_STRENGTH" text="Super Strength"/>
-		<text name="input_LUMBERJACK_STRENGTH" text="Super Strength"/>
-		<text name="text_MASS" text="Mass"/>
-		<text name="text_TONNE" text="tonne"/>
+		<text name="menu_TOGGLE_STRENGTH" text="Szuper erő"/>
+		<text name="input_LUMBERJACK_STRENGTH" text="Szuper erő"/>
+		<text name="text_MASS" text="Tömeg"/>
+		<text name="text_TONNE" text="tonna"/>
 		<text name="text_KG" text="kg"/>
 		<text name="text_METRE" text="m"/>
 		<text name="text_SECOND" text="s"/>
-		<text name="text_INFINITE" text="Infinite"/>
+		<text name="text_INFINITE" text="Végtelen"/>
 		
-		<text name="permission_lumberJack_superSpeed" text="LumberJack Speed"/>
-		<text name="permission_lumberJack_superStrength" text="LumberJack Strength"/>
-		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Chainsaw"/>
+		<text name="permission_lumberJack_superSpeed" text="LumberJack Sebesség"/>
+		<text name="permission_lumberJack_superStrength" text="LumberJack Erő"/>
+		<text name="permission_lumberJack_chainsawSettings" text="LumberJack Láncfűrész"/>
 				
-		<text name="setting_lumberJack_cutAnywhere" text="Cut Anywhere"/>
-		<text name="toolTip_lumberJack_cutAnywhere" text="The player can use a chainsaw anywhere on the map."/>
+		<text name="setting_lumberJack_cutAnywhere" text="Vágás bárhol"/>
+		<text name="toolTip_lumberJack_cutAnywhere" text="A játékos bárhol használhat láncfűrészt a pályán."/>
 		
-		<text name="setting_lumberJack_createWoodchips" text="Create Woodchips"/>
-		<text name="toolTip_lumberJack_createWoodchips" text="Woodchips are created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_createWoodchips" text="Faforgács létrehozása"/>
+		<text name="toolTip_lumberJack_createWoodchips" text="Faforgács keletkezik a fák, vagy cserjék láncfűrésszel történő kivágásakor."/>
 		
-		<text name="setting_lumberJack_maxWoodchips" text="Max. Woodchips"/>
-		<text name="toolTip_lumberJack_maxWoodchips" text="Maximum amount of Woodchips created when cutting trees or grinding stumps with a chainsaw."/>
+		<text name="setting_lumberJack_maxWoodchips" text="Max. Faforgács"/>
+		<text name="toolTip_lumberJack_maxWoodchips" text="A keletkezző faforgács maximális mennyiség, amikor láncfűrésszel vág fát vagy cserjét a játékos."/>
 		
-		<text name="setting_lumberJack_maxCutDistance" text="Chainsaw Cut Distance"/>
-		<text name="toolTip_lumberJack_maxCutDistance" text="Maximum distance that the player can reach to cut with a chainsaw."/>
+		<text name="setting_lumberJack_maxCutDistance" text="Láncfűrész max. vágási távolság"/>
+		<text name="toolTip_lumberJack_maxCutDistance" text="A maximális távolság ahonnan a játékos láncfűrésszel vághat."/>
 		
-		<text name="setting_lumberJack_defaultCutDuration" text="Chainsaw Cut Duration"/>
-		<text name="toolTip_lumberJack_defaultCutDuration" text="Number of seconds for a standard cut with the chainsaw."/>
+		<text name="setting_lumberJack_defaultCutDuration" text="Láncfűrészi vágási idő"/>
+		<text name="toolTip_lumberJack_defaultCutDuration" text="Másodperc, ameddig egy átlagos vágás tart láncfűrésszel."/>
 		
-		<text name="setting_lumberJack_superStrengthValue" text="Super Strength Value"/>
-		<text name="toolTip_lumberJack_superStrengthValue" text="Maximum weight that can be lifted when super strength is active."/>
+		<text name="setting_lumberJack_superStrengthValue" text="Szuper erő értéke"/>
+		<text name="toolTip_lumberJack_superStrengthValue" text="Maximális tömeg amit, aktív szupererővel meg tud emelni a játékos."/>
 		
-		<text name="setting_lumberJack_normalStrengthValue" text="Normal Strength Value"/>
-		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximum weight that can be lifted by the player with normal strength."/>
+		<text name="setting_lumberJack_normalStrengthValue" text="Normál erő értéke"/>
+		<text name="toolTip_lumberJack_normalStrengthValue" text="Maximális tömeg amit, normál erővel meg tud emelni a játékos."/>
 		
-		<text name="setting_lumberJack_superDistanceValue" text="Super Strength Distance"/>
-		<text name="toolTip_lumberJack_superDistanceValue" text="Distance that player can reach to lift objects when super strength is active."/>
+		<text name="setting_lumberJack_superDistanceValue" text="Szuper erő távolsága"/>
+		<text name="toolTip_lumberJack_superDistanceValue" text="A távolság, ameddig elér a játékos, hogy megemelje a tárgyat, aktív szupererővel."/>
 		
-		<text name="setting_lumberJack_normalDistanceValue" text="Normal Strength Distance"/>
-		<text name="toolTip_lumberJack_normalDistanceValue" text="Distance that player can reach to lift objects with normal strength."/>
+		<text name="setting_lumberJack_normalDistanceValue" text="Normál erő távolság"/>
+		<text name="toolTip_lumberJack_normalDistanceValue" text="A távolság, ameddig elér a játékos, hogy megemelje a tárgyat, normál erővel."/>
 		
-		<text name="setting_lumberJack_maxWalkingSpeed" text="Walking Speed"/>
-		<text name="toolTip_lumberJack_maxWalkingSpeed" text="The normal walking speed of the player."/>
+		<text name="setting_lumberJack_maxWalkingSpeed" text="Gyaloglási sebesség"/>
+		<text name="toolTip_lumberJack_maxWalkingSpeed" text="A játékos normális gyaloglási sebessége."/>
 		
-		<text name="setting_lumberJack_maxRunningSpeed" text="Running Speed"/>
-		<text name="toolTip_lumberJack_maxRunningSpeed" text="The normal running speed of the player."/>
+		<text name="setting_lumberJack_maxRunningSpeed" text="Futási sebesség"/>
+		<text name="toolTip_lumberJack_maxRunningSpeed" text="A játékos normális futási sebessége."/>
 		
-		<text name="setting_lumberJack_reduceSideSpeed" text="Reduce Side Speed"/>
-		<text name="toolTip_lumberJack_reduceSideSpeed" text="Reduce the speed of the player when side stepping."/>
+		<text name="setting_lumberJack_reduceSideSpeed" text="Oldalazás lassítása"/>
+		<text name="toolTip_lumberJack_reduceSideSpeed" text="Csökkenti a játékos oldalazás közbeni sebességét."/>
 		
-		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
-		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
+		<text name="setting_lumberJack_destroyFoliageSize" text="Lombozat megsemmisítési terület"/>
+		<text name="toolTip_lumberJack_destroyFoliageSize" text="Az érzekelési terület nagysága a lombok és bokrok megsemmisítéséhez."/>
 		
-		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
-		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
+		<text name="setting_lumberJack_showDebug" text="DEBUG megjelenítése"/>
+		<text name="toolTip_lumberJack_showDebug" text="Hibakereső szöveg kiírása az érzekélési területhez."/>
 		
-		<text name="setting_lumberJack_longHoldThreshold" text="Long Hold Threshold"/>
-		<text name="toolTip_lumberJack_longHoldThreshold" text="How long a button has to be held down to register as a long hold."/>
+		<text name="setting_lumberJack_longHoldThreshold" text="Nyomvatartás időtartam"/>
+		<text name="toolTip_lumberJack_longHoldThreshold" text="Milyen hosszan kell nyomva tartani egy gombot, hogy hosszan nyomva tartásnak minősüljön."/>
 		
-		<text name="setting_lumberJack_doubleTapThreshold" text="Double Tap Threshold"/>
-		<text name="toolTip_lumberJack_doubleTapThreshold" text="How fast a button has to be pressed twice to register as a double tap."/>
+		<text name="setting_lumberJack_doubleTapThreshold" text="Duplakattintási küszöbérték"/>
+		<text name="toolTip_lumberJack_doubleTapThreshold" text="Milyen gyorsan kell kétszer lenyomni a gombot, hogy duplakattintásnak minősüljön."/>
 		
 	</texts>
 </l10n>
