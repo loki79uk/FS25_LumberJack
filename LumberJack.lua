@@ -425,7 +425,7 @@ function LumberJack.updateChainsaw(dt)
 			
 		if LumberJack.originalDefaultCutDuration == nil then
 			LumberJack.originalChainsawStartupTime = chainsaw.startupTime
-			LumberJack.originalDefaultCutDuration = chainsaw.cutTimePerSquareMeter / 1000
+			LumberJack.originalDefaultCutDuration = chainsaw.cutTimePerSquareMeter --4000
 			LumberJack.originalMaximumCutDiameter = chainsaw.maximumCutDiameter --2.5
 			LumberJack.originalMaximumDelimbDiameter = chainsaw.maximumDelimbDiameter --1
 		end
@@ -1147,7 +1147,7 @@ function LumberJack.deleteSplitShape(shape, noEventSend)
 			local amount = volume * splitType.volumeToLiter * splitType.woodChipsPerLiter / 5
 			if amount > LumberJack.maxWoodchips then amount = LumberJack.maxWoodchips end
 			-- debugPrint("amount: " .. tostring(amount))
-			local chainsaw = g_localPlayer.currentHandTool.spec_chainsaw
+			local chainsaw = g_localPlayer and g_localPlayer.currentHandTool.spec_chainsaw
 			local cutPosition = {getWorldTranslation(shape)}
 			LumberJack.createSawdust(chainsaw, amount, cutPosition)
 		
