@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Розмір зони знищення"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Розмір зони виявлення для знищення листя і кущів."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Діаметр обрізки"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Максимальний діапазон діаметрів у метрах, який використовується для обрізки"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Показати дисплей налагоджування"/>
 		<text name="toolTip_lumberJack_showDebug" text="Друк відладочного тексту та накладання для області знищення."/>
 		

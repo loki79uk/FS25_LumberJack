@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Rozmiar niszczenia roślinności"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Rozmiar obszaru wykrywania dla niszczenia roślinności i krzewów."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Średnica przycinania"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Maksymalny zakres średnic w metrach, który jest stosowany przy przycinaniu"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Wyświetl debugowanie"/>
 		<text name="toolTip_lumberJack_showDebug" text="Wyświetl tekst debugowania i nakładkę dla obszaru wykrywania."/>
 		

@@ -16,6 +16,7 @@ LumberJack.minCutDistance = 0.1
 LumberJack.maxCutDistance = 4.0
 LumberJack.defaultCutDuration = 3
 LumberJack.destroyFoliageSize = 2
+LumberJack.maximumDelimbDiameter = 2
 LumberJack.showDebug = false
 
 -- VARIABLES
@@ -434,6 +435,9 @@ function LumberJack.updateChainsaw(dt)
 			-- INCREASE CUTTING SPEED
 			chainsaw.startupTime = LumberJack.defaultCutDuration/4 * 1000
 			chainsaw.cutTimePerSquareMeter = LumberJack.defaultCutDuration * 1000
+			if chainsaw.maximumDelimbDiameter ~= LumberJack.maximumDelimbDiameter then
+				chainsaw.maximumDelimbDiameter = LumberJack.maximumDelimbDiameter
+			end
 		else
 			chainsaw.startupTime = LumberJack.originalChainsawStartupTime
 			chainsaw.cutTimePerSquareMeter = LumberJack.originalDefaultCutDuration

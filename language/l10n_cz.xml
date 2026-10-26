@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Zničit velikost listí"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Velikost detekční oblasti pro ničení listí a keřů."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Průměr při odvětvování"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Maximální rozsah průměrů v metrech, který se používá při odvětvování"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Zobrazit zobrazení ladění"/>
 		<text name="toolTip_lumberJack_showDebug" text="Tisk ladicího textu a překryvu pro oblast detekce."/>
 		

@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Ødelæg løvstørrelse"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Størrelsen på detekteringsområdet for ødelæggelse af løv og buske."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Kvistningsdiameter"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Det maksimale diameterinterval i meter, der anvendes til kvistning"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Vis fejlfindingsvisning"/>
 		<text name="toolTip_lumberJack_showDebug" text="Udskriv fejlsøgningstekst og overlay for detekteringsområdet."/>
 		

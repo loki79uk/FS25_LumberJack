@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Yeşillik Yok Etme Boyutu"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Yeşillik ve çalıların yok edilmesi için algılama alanının boyutu."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Dal Temizleme Çapı"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Dal temizleme işlemi için kullanılan maksimum çap aralığı (metre cinsinden)"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Hata Ayıklama Ekranını Göster"/>
 		<text name="toolTip_lumberJack_showDebug" text="Algılama alanı için hata ayıklama metni ve arayüz yazdır."/>
 		

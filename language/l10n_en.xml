@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Destroy Foliage Size"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="The size of the detection area for destruction of foliage and bushes."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Delimb Diameter"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="The maximum diameter range in metres that is used for delimbing"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
 		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
 		

@@ -55,6 +55,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Размер зоны уничтожения"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Размер зоны обнаружения для уничтожения веток и кустарников."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Диаметр при обрезке"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Максимальный диапазон диаметров в метрах, используемый при обрезке"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Показать отладочный дисплей"/>
 		<text name="toolTip_lumberJack_showDebug" text="Показать текстовую и визуальную информацию мода для отладки."/>
 		

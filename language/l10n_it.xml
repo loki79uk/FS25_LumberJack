@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Dimensione area distruzione del fogliame"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Dimensioni dell'area di rilevamento per la distruzione di fogliame e cespugli."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Diametro di sramatura"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="L'intervallo massimo di diametro, espresso in metri, utilizzato per la sramatura"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Mostra visualizzazione debug"/>
 		<text name="toolTip_lumberJack_showDebug" text="Visualizza il testo di debug e la sovrapposizione per l'area di rilevamento."/>
 		

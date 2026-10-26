@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Größe der Laubzerstörung"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Die Größe des Bereichs, in dem Laub und Sträucher zerstört werden."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Entastungsdurchmesser"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Der maximale Durchmesserbereich in Metern, der für die Entastung verwendet wird"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Debug Informationen anzeigen"/>
 		<text name="toolTip_lumberJack_showDebug" text="Schreibt Debug Ausgaben und zeigt ein Overlay für den Erkennungsbereich."/>
 		

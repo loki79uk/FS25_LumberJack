@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Destrucción follaje Area"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Area de destrucción de follaje y arbustos."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Diámetro de desramado"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="El rango máximo de diámetro, en metros, que se utiliza para el desramado"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Show Debugging Display"/>
 		<text name="toolTip_lumberJack_showDebug" text="Print debugging text and overlay for detection area."/>
 		

@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Taille de destruction du feuillage"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="Taille de la zone de détection pour la destruction du feuillage et des buissons."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Diamètre d'ébranchage"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="Plage maximale de diamètres, en mètres, utilisée pour l'ébranchage"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Afficher le débogage"/>
 		<text name="toolTip_lumberJack_showDebug" text="Afficher les textes et les superpositions de débogage pour la zone de détection."/>
 		

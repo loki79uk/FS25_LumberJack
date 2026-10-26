@@ -15,6 +15,7 @@ LumberJack.menuItems = {
 	'destroyFoliageSize',
 	'longHoldThreshold',
 	'doubleTapThreshold',
+	'maximumDelimbDiameter',
 	'showDebug'
 }
 
@@ -240,6 +241,25 @@ LumberJack.SETTINGS.doubleTapThreshold = {
 		"0.8 "..g_i18n:getText("text_SECOND"),
 		"0.9 "..g_i18n:getText("text_SECOND"),
 		"1.0 "..g_i18n:getText("text_SECOND"),
+	}
+}
+LumberJack.SETTINGS.maximumDelimbDiameter = {
+-- LumberJack.maximumDelimbDiameter = 2
+	['default'] = 6,
+	['permission'] = 'chainsawSettings',
+	['values'] = {1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0},
+	['strings'] = {
+		"1.0 "..g_i18n:getText("text_METRE"),
+		"1.1 "..g_i18n:getText("text_METRE"),
+		"1.2 "..g_i18n:getText("text_METRE"),
+		"1.3 "..g_i18n:getText("text_METRE"),
+		"1.4 "..g_i18n:getText("text_METRE"),
+		"1.5 "..g_i18n:getText("text_METRE"),
+		"1.6 "..g_i18n:getText("text_METRE"),
+		"1.7 "..g_i18n:getText("text_METRE"),
+		"1.8 "..g_i18n:getText("text_METRE"),
+		"1.9 "..g_i18n:getText("text_METRE"),
+		"2.0 "..g_i18n:getText("text_METRE")
 	}
 }
 

@@ -54,6 +54,9 @@
 		<text name="setting_lumberJack_destroyFoliageSize" text="Tamanho da Área de Destruição"/>
 		<text name="toolTip_lumberJack_destroyFoliageSize" text="O tamanho da área de detecção para destruir vegetação e arbustos."/>
 		
+		<text name="setting_lumberJack_maximumDelimbDiameter" text="Diâmetro de desgalhamento"/>
+		<text name="toolTip_lumberJack_maximumDelimbDiameter" text="A faixa máxima de diâmetro, em metros, utilizada para o desgalhamento"/>
+		
 		<text name="setting_lumberJack_showDebug" text="Exibir Informações de Depuração"/>
 		<text name="toolTip_lumberJack_showDebug" text="Exibe informações de depuração e uma sobreposição para a área de detecção."/>
 		
